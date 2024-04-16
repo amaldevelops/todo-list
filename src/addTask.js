@@ -8,11 +8,16 @@ export class addTask
     constructor(task)
     {
         console.log(task);
-        const addNewTask=document.querySelector(".addNewTask");
-        addNewTask.onclick=function()
-        {
-            alert("Button clicked");
-        }
+
+        document.querySelector(".addNewTask").addEventListener('click', function()
+    {
+        const mainPane=document.querySelector(".mainPane");
+
+
+
+        
+    })
+
     }
 
     saveTask(saved)
