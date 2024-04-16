@@ -120,13 +120,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/addTask.js":
+/*!************************!*\
+  !*** ./src/addTask.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addTask: () => (/* binding */ addTask)\n/* harmony export */ });\n// export function addTask()\n// {\n//     console.log(\"addTask Imported\");\n// }\n\nclass addTask\n{\n    constructor(task)\n    {\n        console.log(task);\n        const addNewTask=document.querySelector(\".addNewTask\");\n        addNewTask.onclick=function()\n        {\n            alert(\"Button clicked\");\n        }\n    }\n\n    saveTask(saved)\n    {\n        console.log(saved)\n    }\n}\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/addTask.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\nconsole.log(\"JS Added\");\n\nfunction component() {\n    const element = document.createElement('div');\n \n    // Lodash, now imported by this script\n    element.innerHTML = \"Hello Webpack\";\n   element.classList.add('hello');\n \n    return element;\n  }\n \n  document.body.appendChild(component());\n\n//# sourceURL=webpack://javascript-todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _addTask_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addTask.js */ \"./src/addTask.js\");\n\n\n\n// Test Section\nconst newTask=new _addTask_js__WEBPACK_IMPORTED_MODULE_1__.addTask();\nnewTask.saveTask(\"Hello Amal\");\n\n\nfunction component() {\n    const element = document.createElement('div');\n \n    // Lodash, now imported by this script\n    element.innerHTML = \"Hello Webpack\";\n   element.classList.add('hello');\n \n    return element;\n  }\n \n  document.body.appendChild(component());\n\n//# sourceURL=webpack://javascript-todo-list/./src/index.js?");
 
 /***/ }),
 

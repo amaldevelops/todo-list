@@ -1,5 +1,10 @@
 import "./index.css";
-console.log("JS Added");
+import {addTask} from "./addTask.js"
+
+// Test Section
+const newTask=new addTask();
+newTask.saveTask("Hello Amal");
+
 
 function component() {
     const element = document.createElement('div');
