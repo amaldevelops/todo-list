@@ -7,17 +7,7 @@ export class addTask
 {
     constructor(task)
     {
-        console.log(task);
-
-        document.querySelector(".addNewTask").addEventListener('click', function()
-    {
-        const mainPane=document.querySelector(".mainPane");
-
-
-
-        
-    })
-
+        element.classList.add('addTask');
     }
 
     saveTask(saved)

@@ -1,9 +1,9 @@
 import "./index.css";
-import {addTask} from "./addTask.js"
+import{userInput} from "./userInput.js";
+import {addTask} from "./addTask.js";
 
 // Test Section
-const newTask=new addTask();
-newTask.saveTask("Hello Amal");
+
 
 
 function component() {

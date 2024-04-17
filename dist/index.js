@@ -126,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addTask: () => (/* binding */ addTask)\n/* harmony export */ });\n// export function addTask()\n// {\n//     console.log(\"addTask Imported\");\n// }\n\nclass addTask\n{\n    constructor(task)\n    {\n        console.log(task);\n\n        document.querySelector(\".addNewTask\").addEventListener('click', function()\n    {\n        const mainPane=document.querySelector(\".mainPane\");\n\n\n\n        \n    })\n\n    }\n\n    saveTask(saved)\n    {\n        console.log(saved)\n    }\n}\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/addTask.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addTask: () => (/* binding */ addTask)\n/* harmony export */ });\n// export function addTask()\n// {\n//     console.log(\"addTask Imported\");\n// }\n\nclass addTask\n{\n    constructor(task)\n    {\n        element.classList.add('addTask');\n    }\n\n    saveTask(saved)\n    {\n        console.log(saved)\n    }\n}\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/addTask.js?");
 
 /***/ }),
 
@@ -136,7 +136,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _addTask_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addTask.js */ \"./src/addTask.js\");\n\n\n\n// Test Section\nconst newTask=new _addTask_js__WEBPACK_IMPORTED_MODULE_1__.addTask();\nnewTask.saveTask(\"Hello Amal\");\n\n\nfunction component() {\n    const element = document.createElement('div');\n \n    // Lodash, now imported by this script\n    element.innerHTML = \"Hello Webpack\";\n   element.classList.add('hello');\n \n    return element;\n  }\n \n  document.body.appendChild(component());\n\n//# sourceURL=webpack://javascript-todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _userInput_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./userInput.js */ \"./src/userInput.js\");\n/* harmony import */ var _addTask_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addTask.js */ \"./src/addTask.js\");\n\n\n\n\n// Test Section\n\n\n\nfunction component() {\n    const element = document.createElement('div');\n \n    // Lodash, now imported by this script\n    element.innerHTML = \"Hello Webpack\";\n   element.classList.add('hello');\n \n    return element;\n  }\n \n  document.body.appendChild(component());\n\n//# sourceURL=webpack://javascript-todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/userInput.js":
+/*!**************************!*\
+  !*** ./src/userInput.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   userInput: () => (/* binding */ userInput)\n/* harmony export */ });\nclass userInput\n{\n    constructor(task)\n    {\n        console.log(task);\n\n        document.querySelector(\".addNewTask\").addEventListener('click', function()\n    {\n        const mainPane=document.querySelector(\".mainPane\");\n        alert(\"Hello Amal\");\n\n\n\n    })\n\n    }\n\n    saveTask(saved)\n    {\n        console.log(saved)\n    }\n}\n\nconst newTask=new userInput();\nnewTask.saveTask(\"Hello Amal\");\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/userInput.js?");
 
 /***/ }),
 
