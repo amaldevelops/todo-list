@@ -7,8 +7,19 @@ export class userInput
         document.querySelector(".addNewTask").addEventListener('click', function()
     {
         const mainPane=document.querySelector(".mainPane");
-        alert("Hello Amal");
+        
 
+        let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
+        let newTaskObject = {   
+                            taskTitle:addNewTaskFormData.getAll("taskTitle"),
+                            taskDetails:addNewTaskFormData.getAll("taskDetails"),
+                            dueDate:addNewTaskFormData.getAll("dueDate"),
+                            priority:addNewTaskFormData.getAll("priority"),
+                            projectName:addNewTaskFormData.getAll("projectName")
+
+                        };
+
+        console.log(newTaskObject);
 
 
     })

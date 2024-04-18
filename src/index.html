@@ -13,18 +13,18 @@
         
         <div class="menuPane">
             <div class="newTaskDiv">
-            <form action="" method="get">
+            <form action="" method="get" id="newTaskForm">
                 <label for="taskTitle">Task Title</label>
-                <input type="text" id="taskTitle">
+                <input type="text" name="taskTitle">
 
                 <label for="taskDetails">Task Details</label>
-                <input type="text" id="taskDetails">
+                <input type="text" name="taskDetails">
 
                 <label for="dueDate">Due Date</label>
-                <input type="date" id="dueDate">
+                <input type="date" name="dueDate">
 
                 <label for="priority">Priority</label>
-                <select name="priority" id="priority">
+                <select name="priority">
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>
                     <option value="Low">Low</option>
@@ -39,6 +39,7 @@
 
                 <button class="addNewTask" type="button">Add New Task</button>
             </form>
+
         </div> 
 
             <h2>Projects</h2>
