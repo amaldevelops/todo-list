@@ -6,7 +6,7 @@ export class userInput
 
         document.querySelector(".addNewTask").addEventListener('click', function()
     {
-        const mainPane=document.querySelector(".mainPane");
+        // const mainPane=document.querySelector(".mainPane");
         
 
         let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
