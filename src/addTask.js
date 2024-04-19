@@ -7,7 +7,8 @@ export class addTask
 {
     constructor(task)
     {
-        element.classList.add('addTask');
+        // element.classList.add('addTask');
+        console.log(this.task);
     }
 
     saveTask(saved)

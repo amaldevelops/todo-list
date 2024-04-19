@@ -1,13 +1,12 @@
+import { addTask } from "./addTask";
+
 export class userInput
 {
-    constructor(task)
+    constructor()
     {
-        console.log(task);
 
         document.querySelector(".addNewTask").addEventListener('click', function()
     {
-        // const mainPane=document.querySelector(".mainPane");
-        
 
         let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
         let newTaskObject = {   
@@ -20,6 +19,13 @@ export class userInput
                         };
 
         console.log(newTaskObject);
+        // const newTask=
+        new addTask(newTaskObject);
+        // newTask(newTaskObject);
+        console.log(typeof(newTask));
+
+        return newTaskObject;
+
 
 
     })
