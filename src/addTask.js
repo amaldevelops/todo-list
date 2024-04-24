@@ -5,14 +5,13 @@
 
 export class addTask
 {
-    constructor(task)
+    constructor()
     {
-        // element.classList.add('addTask');
-        console.log(this.task);
+
     }
 
-    saveTask(saved)
+    saveTask(newTaskObject)
     {
-        console.log(saved);
+        console.log(newTaskObject);
     }
 }

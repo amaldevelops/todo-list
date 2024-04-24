@@ -1,16 +1,17 @@
-import { addTask } from "./addTask";
+import { addTask } from "./addTask.js";
 
 export class userInput
 {
     constructor()
     {
-
+        this.addNewTask=new addTask();
+        this.addNewTaskFormCapture();
 
     }
 
     addNewTaskFormCapture()
     {
-        document.querySelector(".addNewTask").addEventListener('click', function()
+        document.querySelector(".addNewTask").addEventListener('click',()=>
         {
     
             let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
@@ -23,17 +24,33 @@ export class userInput
     
                             };
     
-            return addNewTask.saveTask(newTaskObject);
+            this.addNewTask.saveTask(newTaskObject);
             
         })
 
+        
+
     }
+
+    addNewProjectButtonClicked()
+      {
+            
+      }
+
+    urgentAndImportantButtonClicked()
+      {
+            
+
+      }
+
+    notUrgentButImportantButtonClicked()
+      {
+            
+      }
 
 
 }
 
-const newUserInput=new userInput();
-newUserInput.addNewTaskFormCapture();
 
-const addNewTask=new addTask();
+
 
