@@ -13,6 +13,6 @@ export class addTask
 
     saveTask(saved)
     {
-        console.log(saved)
+        console.log(saved);
     }
 }

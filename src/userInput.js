@@ -5,38 +5,35 @@ export class userInput
     constructor()
     {
 
+
+    }
+
+    addNewTaskFormCapture()
+    {
         document.querySelector(".addNewTask").addEventListener('click', function()
-    {
-
-        let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
-        let newTaskObject = {   
-                            taskTitle:addNewTaskFormData.getAll("taskTitle"),
-                            taskDetails:addNewTaskFormData.getAll("taskDetails"),
-                            dueDate:addNewTaskFormData.getAll("dueDate"),
-                            priority:addNewTaskFormData.getAll("priority"),
-                            projectName:addNewTaskFormData.getAll("projectName")
-
-                        };
-
-        console.log(newTaskObject);
-        // const newTask=
-        new addTask(newTaskObject);
-        // newTask(newTaskObject);
-        console.log(typeof(newTask));
-
-        return newTaskObject;
-
-
-
-    })
+        {
+    
+            let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
+            let newTaskObject = {   
+                                taskTitle:addNewTaskFormData.getAll("taskTitle"),
+                                taskDetails:addNewTaskFormData.getAll("taskDetails"),
+                                dueDate:addNewTaskFormData.getAll("dueDate"),
+                                priority:addNewTaskFormData.getAll("priority"),
+                                projectName:addNewTaskFormData.getAll("projectName")
+    
+                            };
+    
+            return addNewTask.saveTask(newTaskObject);
+            
+        })
 
     }
 
-    saveTask(saved)
-    {
-        console.log(saved)
-    }
+
 }
 
-const newTask=new userInput();
-newTask.saveTask("Hello Amal");
+const newUserInput=new userInput();
+newUserInput.addNewTaskFormCapture();
+
+const addNewTask=new addTask();
+
