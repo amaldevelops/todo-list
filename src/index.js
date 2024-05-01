@@ -1,9 +1,9 @@
 import "./index.css";
-import{userInput} from "./userInput.js";
-import {addTask} from "./addTask.js";
+import{displayController} from "./displayController.js";
+import {taskNew} from "./taskNew.js";
 
 // Test Section
 
-const newUserInput=new userInput();
+const newUserInput=new displayController();
 // newUserInput.addNewTaskFormCapture();
 

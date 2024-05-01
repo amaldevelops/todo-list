@@ -120,13 +120,13 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
-/***/ "./src/addTask.js":
-/*!************************!*\
-  !*** ./src/addTask.js ***!
-  \************************/
+/***/ "./src/displayController.js":
+/*!**********************************!*\
+  !*** ./src/displayController.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addTask: () => (/* binding */ addTask)\n/* harmony export */ });\n// export function addTask()\n// {\n//     console.log(\"addTask Imported\");\n// }\n\nclass addTask\n{\n    constructor()\n    {\n\n    }\n\n    saveTask(newTaskObject)\n    {\n        console.log(newTaskObject);\n    }\n}\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/addTask.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   displayController: () => (/* binding */ displayController)\n/* harmony export */ });\n/* harmony import */ var _taskNew_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskNew.js */ \"./src/taskNew.js\");\n\n\nclass displayController\n{\n    constructor()\n    {\n        this.addNewTask=new _taskNew_js__WEBPACK_IMPORTED_MODULE_0__.taskNew();\n        this.addNewTaskFormCapture();\n\n    }\n\n    addNewTaskFormCapture()\n    {\n        document.querySelector(\".addNewTask\").addEventListener('click',()=>\n        {\n    \n            let addNewTaskFormData = new FormData(document.querySelector(\"#newTaskForm\"));\n            let newTaskObject = {   \n                                taskTitle:addNewTaskFormData.getAll(\"taskTitle\"),\n                                taskDetails:addNewTaskFormData.getAll(\"taskDetails\"),\n                                dueDate:addNewTaskFormData.getAll(\"dueDate\"),\n                                priority:addNewTaskFormData.getAll(\"priority\"),\n                                projectName:addNewTaskFormData.getAll(\"projectName\")\n    \n                            };\n    \n            this.addNewTask.saveTask(newTaskObject);\n            \n        })\n\n        \n\n    }\n\n    addNewProjectButtonClicked()\n      {\n            \n      }\n\n    urgentAndImportantButtonClicked()\n      {\n            \n\n      }\n\n    notUrgentButImportantButtonClicked()\n      {\n            \n      }\n\n\n}\n\n\n\n\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/displayController.js?");
 
 /***/ }),
 
@@ -136,17 +136,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _userInput_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./userInput.js */ \"./src/userInput.js\");\n/* harmony import */ var _addTask_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addTask.js */ \"./src/addTask.js\");\n\n\n\n\n// Test Section\n\nconst newUserInput=new _userInput_js__WEBPACK_IMPORTED_MODULE_1__.userInput();\n// newUserInput.addNewTaskFormCapture();\n\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _displayController_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayController.js */ \"./src/displayController.js\");\n/* harmony import */ var _taskNew_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskNew.js */ \"./src/taskNew.js\");\n\n\n\n\n// Test Section\n\nconst newUserInput=new _displayController_js__WEBPACK_IMPORTED_MODULE_1__.displayController();\n// newUserInput.addNewTaskFormCapture();\n\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/userInput.js":
-/*!**************************!*\
-  !*** ./src/userInput.js ***!
-  \**************************/
+/***/ "./src/taskNew.js":
+/*!************************!*\
+  !*** ./src/taskNew.js ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   userInput: () => (/* binding */ userInput)\n/* harmony export */ });\n/* harmony import */ var _addTask_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addTask.js */ \"./src/addTask.js\");\n\n\nclass userInput\n{\n    constructor()\n    {\n        this.addNewTask=new _addTask_js__WEBPACK_IMPORTED_MODULE_0__.addTask();\n        this.addNewTaskFormCapture();\n\n    }\n\n    addNewTaskFormCapture()\n    {\n        document.querySelector(\".addNewTask\").addEventListener('click',()=>\n        {\n    \n            let addNewTaskFormData = new FormData(document.querySelector(\"#newTaskForm\"));\n            let newTaskObject = {   \n                                taskTitle:addNewTaskFormData.getAll(\"taskTitle\"),\n                                taskDetails:addNewTaskFormData.getAll(\"taskDetails\"),\n                                dueDate:addNewTaskFormData.getAll(\"dueDate\"),\n                                priority:addNewTaskFormData.getAll(\"priority\"),\n                                projectName:addNewTaskFormData.getAll(\"projectName\")\n    \n                            };\n    \n            this.addNewTask.saveTask(newTaskObject);\n            \n        })\n\n        \n\n    }\n\n    addNewProjectButtonClicked()\n      {\n            \n      }\n\n    urgentAndImportantButtonClicked()\n      {\n            \n\n      }\n\n    notUrgentButImportantButtonClicked()\n      {\n            \n      }\n\n\n}\n\n\n\n\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/userInput.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   taskNew: () => (/* binding */ taskNew)\n/* harmony export */ });\n// export function addTask()\n// {\n//     console.log(\"addTask Imported\");\n// }\n\nclass taskNew\n{\n    constructor()\n    {\n\n    }\n\n    saveTask(newTaskObject)\n    {\n        console.log(newTaskObject);\n    }\n}\n\n\n//# sourceURL=webpack://javascript-todo-list/./src/taskNew.js?");
 
 /***/ }),
 

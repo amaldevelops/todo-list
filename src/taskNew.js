@@ -3,7 +3,7 @@
 //     console.log("addTask Imported");
 // }
 
-export class addTask
+export class taskNew
 {
     constructor()
     {

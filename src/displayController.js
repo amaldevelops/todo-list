@@ -1,10 +1,10 @@
-import { addTask } from "./addTask.js";
+import { taskNew } from "./taskNew.js";
 
-export class userInput
+export class displayController
 {
     constructor()
     {
-        this.addNewTask=new addTask();
+        this.addNewTask=new taskNew();
         this.addNewTaskFormCapture();
 
     }
