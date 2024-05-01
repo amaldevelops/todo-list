@@ -2,9 +2,13 @@
 import "./index.css";
 import{displayController} from "./displayController.js";
 import {taskNew} from "./taskNew.js";
+import { localStorageAccess } from "./localStorageAccess.js";
 
 // Test Section
 
 const newUserInput=new displayController();
 // newUserInput.addNewTaskFormCapture();
 
+const testWrite=new localStorageAccess();
+testWrite.localStorageAccessWrite();
+console.log(testWrite.localStorageAccessRead());

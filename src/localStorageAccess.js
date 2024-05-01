@@ -20,6 +20,4 @@ localStorageAccessWrite()
 
 }
 
-// new testWrite=new localStorageAccess();
-// testWrite.localStorageAccessWrite();
-// testWrite.localStorageAccessRead();
+
