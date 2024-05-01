@@ -10,8 +10,10 @@ localStorageAccessRead()
 {
 
     // console.log(objectInOut);
-    console.log("Read");
-    const taskName=localStorage.getItemItem("TaskName");
+    // console.log("Read");
+    const taskName=localStorage.getItem("TaskName");
+    console.log(taskName);
+    console.log(localStorage.getItem("TaskDescription"));
 
 }
 
@@ -19,10 +21,11 @@ localStorageAccessWrite()
 {
     console.log("Write");
     localStorage.setItem("TaskName","Local Storage Works, Yayyy!!");
+    localStorage.setItem("TaskDescription", "I am just confirming that the Local storage works");
     
 }
 
-
+// This will check whether browser supports LocalStorage
 storageAvailable(type) {
     let storage;
     try {
