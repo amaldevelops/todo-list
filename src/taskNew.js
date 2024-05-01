@@ -16,8 +16,9 @@ export class taskNew
 
     saveTask(newTaskObject)
     {
-        console.log(newTaskObject);
-        const saveTask=new localStorageAccess();
+        // console.log(newTaskObject);
+        const saveTask=new localStorageAccess(newTaskObject);
+        return saveTask.localStorageAccessRead();
 
     }
 }
