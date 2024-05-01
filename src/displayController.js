@@ -1,3 +1,5 @@
+// Only functionality of this module is to capture user inputs and to update the display as required
+
 import { taskNew } from "./taskNew.js";
 
 export class displayController
@@ -5,11 +7,11 @@ export class displayController
     constructor()
     {
         this.addNewTask=new taskNew();
-        this.addNewTaskFormCapture();
+        this.addNewTaskFormCaptureButtonClicked();
 
     }
 
-    addNewTaskFormCapture()
+    addNewTaskFormCaptureButtonClicked()
     {
         document.querySelector(".addNewTask").addEventListener('click',()=>
         {
@@ -47,6 +49,12 @@ export class displayController
       {
             
       }
+
+    
+    updateDisplayTaskList()
+    {
+
+    }
 
 
 }
