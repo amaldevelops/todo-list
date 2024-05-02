@@ -5,17 +5,32 @@ import {taskNew} from "./taskNew.js";
 import {localStorageAccess} from "./localStorageAccess.js";
 
 // Test Section
-console.log("Index.js loaded")
 export const newUserInput=new displayController();
-newUserInput.addNewTaskFormCaptureButtonClicked();
-newUserInput.urgentAndImportantButtonClicked();
-
 export const initializeLocalStorage=new localStorageAccess();
-initializeLocalStorage.localStorageAccessWrite();
+
+
+const runProgram=function()
+{
+    console.log("Index.js loaded");
+
+    newUserInput.addNewTaskFormCaptureButtonClicked();
+    newUserInput.urgentAndImportantButtonClicked();
+    newUserInput.notUrgentButImportantButtonClicked();
+    
+    initializeLocalStorage.localStorageAccessWrite();
 
 //Code to check for Local Storage availability
-if (initializeLocalStorage.storageAvailable("localStorage")) {
-    console.log("Yippee! We can use localStorage awesomeness");
-  } else {
-    console.log("Too bad, no localStorage for us");
-  }
+    if (initializeLocalStorage.storageAvailable("localStorage")) 
+    {
+        console.log("Yippee! We can use localStorage awesomeness");
+    } 
+    
+    else 
+    
+    {
+        console.log("Too bad, no localStorage for us");
+    }
+
+}  
+
+runProgram();

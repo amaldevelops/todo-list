@@ -8,16 +8,9 @@ this.saveRead=saveRead;
 
 localStorageAccessRead()
 {
-    // this.read=read;
     const read=localStorage.getItem("Tasks");
-    const convertToString=JSON.parse(read);
-    console.log(convertToString);
-    return convertToString;
-
-    // const taskName=localStorage.getItem("TaskName");
-    // console.log(taskName);
-    // console.log(localStorage.getItem("TaskDescription"));
-
+    const convertToJSON=JSON.parse(read);
+    return convertToJSON;
 
 }
 
@@ -25,9 +18,7 @@ localStorageAccessWrite(save)
 {
     this.save=save;
     const convertToString=JSON.stringify(this.save);
-    // console.log(convertToString);
     localStorage.setItem("Tasks",convertToString);
-    // localStorage.setItem("TaskDescription", "I am just confirming that the Local storage works");
     
 }
 

@@ -44,7 +44,8 @@ export class displayController
       {
             document.querySelector(".urgentImportantButton").addEventListener('click',()=>
             {
-              initializeLocalStorage.localStorageAccessRead();
+              const urgentImportantData=initializeLocalStorage.localStorageAccessRead();
+              console.log(urgentImportantData);
             
 
             });
@@ -53,6 +54,11 @@ export class displayController
 
     notUrgentButImportantButtonClicked()
       {
+        document.querySelector(".notUrgentButImportantButton").addEventListener('click',()=>
+        {
+          const notUrgentButImportantData=initializeLocalStorage.localStorageAccessRead();
+          console.log(notUrgentButImportantData);
+        });
             
       }
 
