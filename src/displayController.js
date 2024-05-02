@@ -1,6 +1,7 @@
 // Only functionality of this module is to capture user inputs and to update the display as required
 
 import { taskNew } from "./taskNew.js";
+import {initializeLocalStorage} from "./index.js";
 
 export class displayController
 {
@@ -41,7 +42,12 @@ export class displayController
 
     urgentAndImportantButtonClicked()
       {
+            document.querySelector(".urgentImportantButton").addEventListener('click',()=>
+            {
+              initializeLocalStorage.localStorageAccessRead();
             
+
+            });
 
       }
 

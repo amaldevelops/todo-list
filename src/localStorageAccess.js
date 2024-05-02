@@ -1,27 +1,33 @@
 // This module will handle all of the functions related to writing, modifying, reading local storage object for storing program data
 export class localStorageAccess
 {
-constructor (objectInOut)
+constructor (saveRead)
 {
-this.objectInOut=objectInOut;
+this.saveRead=saveRead;
 }
 
 localStorageAccessRead()
 {
+    // this.read=read;
+    const read=localStorage.getItem("Tasks");
+    const convertToString=JSON.parse(read);
+    console.log(convertToString);
+    return convertToString;
 
-    // console.log(objectInOut);
-    // console.log("Read");
-    const taskName=localStorage.getItem("TaskName");
-    console.log(taskName);
-    console.log(localStorage.getItem("TaskDescription"));
+    // const taskName=localStorage.getItem("TaskName");
+    // console.log(taskName);
+    // console.log(localStorage.getItem("TaskDescription"));
+
 
 }
 
-localStorageAccessWrite()
+localStorageAccessWrite(save)
 {
-    console.log("Write");
-    localStorage.setItem("TaskName","Local Storage Works, Yayyy!!");
-    localStorage.setItem("TaskDescription", "I am just confirming that the Local storage works");
+    this.save=save;
+    const convertToString=JSON.stringify(this.save);
+    // console.log(convertToString);
+    localStorage.setItem("Tasks",convertToString);
+    // localStorage.setItem("TaskDescription", "I am just confirming that the Local storage works");
     
 }
 

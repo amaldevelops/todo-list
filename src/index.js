@@ -6,14 +6,15 @@ import {localStorageAccess} from "./localStorageAccess.js";
 
 // Test Section
 console.log("Index.js loaded")
-const newUserInput=new displayController();
-// newUserInput.addNewTaskFormCapture();
+export const newUserInput=new displayController();
+newUserInput.addNewTaskFormCaptureButtonClicked();
+newUserInput.urgentAndImportantButtonClicked();
 
-const testWrite=new localStorageAccess();
-testWrite.localStorageAccessWrite();
-testWrite.localStorageAccessRead();
+export const initializeLocalStorage=new localStorageAccess();
+initializeLocalStorage.localStorageAccessWrite();
 
-if (testWrite.storageAvailable("localStorage")) {
+//Code to check for Local Storage availability
+if (initializeLocalStorage.storageAvailable("localStorage")) {
     console.log("Yippee! We can use localStorage awesomeness");
   } else {
     console.log("Too bad, no localStorage for us");
