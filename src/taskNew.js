@@ -1,6 +1,7 @@
 // Only function of this module is to Add New tasks as per user request and changes will be stored by calling the localStorageAccess module
 
-import {localStorageAccess} from "./localStorageAccess";
+import {localStorageAccess} from "./localStorageAccess.js";
+import {initializeLocalStorage} from "./index.js"
 
 export class taskNew
 {
@@ -11,9 +12,12 @@ export class taskNew
 
     saveTask(newTaskObject)
     {
-        // console.log(newTaskObject);
-        const saveTask=new localStorageAccess();
-        return saveTask.localStorageAccessWrite(newTaskObject);
+
+        // const saveTask=new localStorageAccess();
+        // return saveTask.localStorageAccessWrite(newTaskObject);
+        console.log(typeof(newTaskObject));
+
+        return initializeLocalStorage.localStorageAccessWrite(newTaskObject);
 
     }
 }

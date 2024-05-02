@@ -19,15 +19,18 @@ export class displayController
     
             let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
             let newTaskObject = {   
+                                projectName:addNewTaskFormData.getAll("projectName"),
                                 taskTitle:addNewTaskFormData.getAll("taskTitle"),
                                 taskDetails:addNewTaskFormData.getAll("taskDetails"),
                                 dueDate:addNewTaskFormData.getAll("dueDate"),
-                                priority:addNewTaskFormData.getAll("priority"),
-                                projectName:addNewTaskFormData.getAll("projectName")
+                                priority:addNewTaskFormData.getAll("priority")
+                                
     
                             };
     
             this.addNewTask.saveTask(newTaskObject);
+
+
             
         })
 
@@ -37,6 +40,10 @@ export class displayController
 
     addNewProjectButtonClicked()
       {
+        document.querySelector(".addNewProjectButton").addEventListener('click',()=>
+        {
+          alert("Button clicked");
+        });
             
       }
 
