@@ -13,9 +13,11 @@ export class taskNew
     saveTask(newTaskObject)
     {
 
-        // const saveTask=new localStorageAccess();
-        // return saveTask.localStorageAccessWrite(newTaskObject);
+       
+  
+
         console.log(typeof(newTaskObject));
+        console.log(newTaskObject.projectName[0]);
 
         return initializeLocalStorage.localStorageAccessWrite(newTaskObject);
 
