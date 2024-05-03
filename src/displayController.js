@@ -1,7 +1,9 @@
 // Only functionality of this module is to capture user inputs and to update the display as required
 
-import { taskNew } from "./taskNew.js";
+import {taskNew} from "./taskNew.js";
+import {taskEdit} from "./taskEdit.js";
 import {initializeLocalStorage} from "./index.js";
+import {newTaskEdit} from "./index.js";
 
 export class displayController
 {
@@ -29,13 +31,10 @@ export class displayController
                             };
     
             this.addNewTask.saveTask(newTaskObject);
-
-
-            
+     
         })
 
-        
-
+ 
     }
 
     addNewProjectButtonClicked()
@@ -53,7 +52,6 @@ export class displayController
             {
               const urgentImportantData=initializeLocalStorage.localStorageAccessRead();
               console.log(urgentImportantData);
-            
 
             });
 
@@ -63,8 +61,13 @@ export class displayController
       {
         document.querySelector(".notUrgentButImportantButton").addEventListener('click',()=>
         {
-          const notUrgentButImportantData=initializeLocalStorage.localStorageAccessRead();
-          console.log(notUrgentButImportantData);
+          // const notUrgentButImportantData=initializeLocalStorage.localStorageAccessRead();
+          // console.log(notUrgentButImportantData);
+
+          newTaskEdit.edit();
+          
+
+
         });
             
       }

@@ -14,12 +14,11 @@ export class taskNew
     {
 
        
-  
+        // console.log(typeof(newTaskObject));
+        // console.log(newTaskObject.projectName[0]);
+        console.log(newTaskObject["projectName"]);
 
-        console.log(typeof(newTaskObject));
-        console.log(newTaskObject.projectName[0]);
-
-        return initializeLocalStorage.localStorageAccessWrite(newTaskObject);
+        return initializeLocalStorage.localStorageAccessWrite(newTaskObject["projectName"]);
 
     }
 }

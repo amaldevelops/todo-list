@@ -3,14 +3,14 @@ export class localStorageAccess
 {
 constructor (saveRead)
 {
-this.saveRead=saveRead;
+    this.saveRead=saveRead;
 }
 
 localStorageAccessRead()
 {
-    const read=localStorage.getItem("Tasks");
-    const convertToJSON=JSON.parse(read);
-    return convertToJSON;
+    const read=localStorage.getItem("taskStorage");
+    const localStorageReadJSON=JSON.parse(read);
+    return localStorageReadJSON;
 
 }
 
@@ -18,7 +18,7 @@ localStorageAccessWrite(save)
 {
     this.save=save;
     const convertToString=JSON.stringify(this.save);
-    localStorage.setItem("Tasks",convertToString);
+    localStorage.setItem("taskStorage",convertToString);
     
 }
 

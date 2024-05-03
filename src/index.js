@@ -1,14 +1,17 @@
 //This module contains the application logic for the To Do App and it will act as the intermediary for all the other modules
 
-//ES6 Module Imports
+//ES Module Imports
 import "./index.css";
 import{displayController} from "./displayController.js";
 import {taskNew} from "./taskNew.js";
 import {localStorageAccess} from "./localStorageAccess.js";
+import {taskEdit} from "./taskEdit.js";
 
-//ES6 Module Exports
+
+//ES Module Exports
 export const newUserInput=new displayController();
 export const initializeLocalStorage=new localStorageAccess();
+export const newTaskEdit=new taskEdit();
 
 // Program initialization code
 const runProgram=function()
@@ -20,7 +23,9 @@ const runProgram=function()
     newUserInput.notUrgentButImportantButtonClicked();
     newUserInput.addNewProjectButtonClicked();
     
-    initializeLocalStorage.localStorageAccessWrite();
+    initializeLocalStorage.localStorageAccessRead();
+
+
 
     //Code to check for Local Storage availability
     if (initializeLocalStorage.storageAvailable("localStorage")) 
