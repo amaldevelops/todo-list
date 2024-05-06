@@ -6,7 +6,7 @@ export class taskEdit
 
     constructor()
     {
-        this.test={"Urgent & Important (Default)":[{"taskId":"1","taskTitle":"","Description":"","dueDate":"","priority":"","projectName":""},
+        this.test={"urgentAndImportant":[{"taskId":"1","taskTitle":"","Description":"","dueDate":"","priority":"","projectName":""},
                                             
                                             {"taskId":"2",
                                             "taskTitle":"",
@@ -17,7 +17,7 @@ export class taskEdit
                                         
                                            ],
             
-            "Not Urgent but Important":    [
+            "notUrgentbutImportant":    [
                                             {"taskId":"3",
                                             "taskTitle":"",
                                             "Description":"",

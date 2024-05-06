@@ -16,8 +16,9 @@ export class taskNew
 
         let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
         let setProjectName=newTaskObject["projectName"];
-        currentLocalStorage[setProjectName]=newTaskObject;
+        currentLocalStorage[setProjectName].push(newTaskObject);
         console.log(typeof(currentLocalStorage));
+        console.log(currentLocalStorage);
 
         return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
