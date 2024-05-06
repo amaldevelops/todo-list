@@ -43,3 +43,5 @@ const runProgram=function()
 
 
 runProgram(); // Run the program
+
+newUserInput.updateDisplayTaskList();

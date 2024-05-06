@@ -5,11 +5,11 @@ import {initializeLocalStorage} from "./index.js";
 
 export class taskNew
 {
-    constructor()
-    {
+    // constructor()
+    // {
         
         
-    }
+    // }
 
     saveTask(newTaskObject)
     {

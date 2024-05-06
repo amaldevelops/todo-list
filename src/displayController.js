@@ -30,7 +30,7 @@ export class displayController
     
                             };
     
-            this.addNewTask.saveTask(newTaskObject);
+            return this.addNewTask.saveTask(newTaskObject);
      
         })
 
@@ -75,6 +75,21 @@ export class displayController
     
     updateDisplayTaskList()
     {
+      const taskListDiv=document.querySelector(".taskDisplay");
+
+      const taskDiv=document.createElement("div");
+      taskListDiv.append(taskDiv);
+
+
+      const projectName=document.createElement("h2");
+      const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
+      console.log(currentLocalStorage);
+      projectName.innerText=JSON.stringify(currentLocalStorage);
+
+      taskDiv.append(projectName);
+
+
+
 
     }
 
