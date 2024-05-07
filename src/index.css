@@ -16,6 +16,44 @@ h1
     font-size: 20px;
 }
 
+
+h2
+{
+color:#5f449e;
+font-size:15px;
+}
+
+h3
+{
+    color:#584585;
+    font-size:15px;
+}
+
+.individualTaskDetails
+{
+    background-color: #d9d4d4;
+}
+
+.individualTaskDetails p
+{
+font-size:15px;
+color:#1aa739;
+}
+
+.deleteButton
+{
+font-size:15px;
+background-color:#a71a1a;
+}
+
+.editButton
+{
+font-size:15px;
+background-color:#2f32d1;
+}
+
+
+
 .softwareArchitecture
 {
     background-color: #290303;

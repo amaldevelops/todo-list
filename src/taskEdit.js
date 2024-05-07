@@ -6,14 +6,13 @@ export class taskEdit
 
     constructor()
     {
-        this.test={"urgentAndImportant":[{"taskId":"1","taskTitle":"","Description":"","dueDate":"","priority":"","projectName":""},
-                                            
+        this.test={"urgentAndImportant":[                                       
                                             {"taskId":"2",
-                                            "taskTitle":"",
-                                            "Description":"",
-                                            "dueDate":"",
-                                            "priority":"",
-                                            "projectName":""}
+                                            "taskTitle":"Test1",
+                                            "Description":"Test1 Description",
+                                            "dueDate":"01/06/2024",
+                                            "priority":"High",
+                                            "projectName":"urgentAndImportant"}
                                         
                                            ],
             
@@ -23,7 +22,7 @@ export class taskEdit
                                             "Description":"",
                                             "dueDate":"",
                                             "priority":"",
-                                            "projectName":""},
+                                            "projectName":"urgentAndImportant"},
                                             
                                             {"taskId":"4",
                                             "taskTitle":"",
