@@ -6,6 +6,23 @@ constructor (saveRead)
     this.saveRead=saveRead;
 }
 
+localStorageStatus(status)
+{
+  if (!localStorage.getItem("taskStorage"))
+    {
+      console.log("Local Storage Empty");
+      console.log(status);
+      return "Empty Storage";
+      
+    }
+  
+  else
+  {
+    console.log("Local Storage is Not Empty");
+    // return localStorageAccessWrite(status);
+  }
+}
+
 localStorageAccessRead()
 {
     const read=localStorage.getItem("taskStorage");
@@ -19,6 +36,7 @@ localStorageAccessWrite(save)
     this.save=save;
     const convertToString=JSON.stringify(this.save);
     localStorage.setItem("taskStorage",convertToString);
+   
     
 }
 

@@ -7,7 +7,7 @@ export class taskEdit
     constructor()
     {
         this.test={"urgentAndImportant":[                                       
-                                            {"taskId":"2",
+                                            {
                                             "taskTitle":"Test1",
                                             "Description":"Test1 Description",
                                             "dueDate":"01/06/2024",
@@ -17,14 +17,14 @@ export class taskEdit
                                            ],
             
             "notUrgentbutImportant":    [
-                                            {"taskId":"3",
+                                            {
                                             "taskTitle":"",
                                             "Description":"",
                                             "dueDate":"",
                                             "priority":"",
-                                            "projectName":"urgentAndImportant"},
+                                            "projectName":"notUrgentbutImportant"},
                                             
-                                            {"taskId":"4",
+                                            {
                                             "taskTitle":"",
                                             "Description":"",
                                             "dueDate":"",
@@ -39,6 +39,8 @@ export class taskEdit
 
     edit()
     {
+        initializeLocalStorage.localStorageStatus();
         initializeLocalStorage.localStorageAccessWrite(this.test);
+
     }
 }

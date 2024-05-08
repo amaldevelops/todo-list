@@ -66,8 +66,6 @@ export class displayController
 
           newTaskEdit.edit();
           
-
-
         });
             
       }
@@ -75,7 +73,16 @@ export class displayController
     
     updateDisplayTaskList()
     {
-      const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
+      if (initializeLocalStorage.localStorageStatus()==="Empty Storage")
+        {
+          console.log("Local Storage is empty");
+        }
+
+        else
+        {
+          console.log("Local Storage is NOT empty");
+
+          const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
       console.log(currentLocalStorage);
       console.log(currentLocalStorage["urgentAndImportant"].length);
       
@@ -88,6 +95,7 @@ export class displayController
           taskListDiv.append(taskDiv);
     
           const projectName=document.createElement("h2");
+          // projectName.innerText=currentLocalStorage["urgentAndImportant"][i];
           projectName.innerText=JSON.stringify(currentLocalStorage["urgentAndImportant"][i]);
           taskDiv.append(projectName);
 
@@ -101,12 +109,23 @@ export class displayController
           deleteButton.innerText="Delete Task";
           taskDiv.append(deleteButton);
 
-        }
+          this.editButton.addEventListener('click',()=>
+            {
+              console.log("Edit Button Clicked");
+            });
 
-        document.querySelector(".editButton").addEventListener('click',()=>
-          {
-            console.log("Edit Button Clicked");
-          });
+          deleteButton.addEventListener('click',()=>
+            {
+              console.log("Delete Button Clicked");
+            });
+
+        }
+        }
+      
+      
+      
+
+
 
 
 

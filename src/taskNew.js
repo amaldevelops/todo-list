@@ -20,7 +20,8 @@ export class taskNew
         console.log(typeof(currentLocalStorage));
         console.log(currentLocalStorage);
 
-        return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+        return initializeLocalStorage.localStorageStatus(currentLocalStorage);
+        // return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
     }
 }
