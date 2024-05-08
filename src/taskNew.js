@@ -13,15 +13,27 @@ export class taskNew
 
     saveTask(newTaskObject)
     {
+       
+        this.newTaskObject=newTaskObject;
 
-        let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-        let setProjectName=newTaskObject["projectName"];
-        currentLocalStorage[setProjectName].push(newTaskObject);
-        console.log(typeof(currentLocalStorage));
-        console.log(currentLocalStorage);
+        if (initializeLocalStorage.localStorageStatus()==="Storage NOT Empty")
+            {
+                // alert("Local Storage is Not Empty")
+                let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
+                let setProjectName=newTaskObject["projectName"];
+                currentLocalStorage[setProjectName].push(this.newTaskObject);
+                console.log(typeof(currentLocalStorage));
+                console.log(currentLocalStorage);
+        
+                return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+            }
+        else if(initializeLocalStorage.localStorageStatus()==="Empty Storage")
+            {
+                alert("Local Storage is Empty")
+                return initializeLocalStorage.localStorageAccessWrite(this.newTaskObject);
+            }
+        
 
-        return initializeLocalStorage.localStorageStatus(currentLocalStorage);
-        // return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
     }
 }

@@ -123,32 +123,6 @@ export class displayController
         }
       
       
-      
-
-
-
-
-
-
-      // const taskName=document.createElement("p");
-      // taskName.innerText="Task Title: " + JSON.stringify(currentLocalStorage["urgentAndImportant"][0]["taskTitle"]);
-      // taskDiv.append(taskName);
-
-      // const taskDetails=document.createElement("p");
-      // taskDetails.innerText="Description: " + JSON.stringify(currentLocalStorage["urgentAndImportant"][0]["Description"]);
-      // taskDiv.append(taskDetails);
-
-      // const dueDate=document.createElement("p");
-      // dueDate.innerText="Due Date: " + JSON.stringify(currentLocalStorage["urgentAndImportant"][0]["dueDate"]);
-      // taskDiv.append(dueDate);
-
-      // const priority=document.createElement("p");
-      // priority.innerText="Priority: " + JSON.stringify(currentLocalStorage["urgentAndImportant"][0]["priority"]);
-      // taskDiv.append(priority);
-
-
-
-    
 
     }
 
