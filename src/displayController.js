@@ -10,7 +10,7 @@ export class displayController
 {
     constructor()
     {
-        this.addNewTask=new taskNew();
+        this.taskNewSave=new taskNew();
         this.addNewTaskFormCaptureButtonClicked();
 
     }
@@ -30,8 +30,9 @@ export class displayController
                                 
     
                             };
+                            // console.log(newTaskObject);
     
-            return this.addNewTask.saveTask(newTaskObject);
+            this.taskNewSave.saveTask(newTaskObject);
      
         })
 

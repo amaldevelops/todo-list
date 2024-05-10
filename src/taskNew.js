@@ -5,25 +5,25 @@ import {initializeLocalStorage} from "./index.js";
 
 export class taskNew
 {
-    // constructor()
-    // {
+    constructor()
+    {
         
-        
-    // }
+
+    }
 
     saveTask(newTaskObject)
     {
        
-        this.newTaskObject=newTaskObject;
 
         if (initializeLocalStorage.localStorageStatus()==="Storage NOT Empty")
             {
                 // alert("Local Storage is Not Empty")
                 let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-                let setProjectName=newTaskObject["projectName"];
-                currentLocalStorage[setProjectName].push(this.newTaskObject);
-                console.log(typeof(currentLocalStorage));
-                console.log(currentLocalStorage);
+                // let setProjectName=newTaskObject["completeTaskList"][0]["projectName"];
+                // currentLocalStorage[setProjectName].push(this.newTaskObject);
+                // console.log(typeof(currentLocalStorage));
+                console.log(newTaskObject);
+                // console.log(initializeLocalStorage)
         
                 return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
             }
