@@ -6,12 +6,14 @@ import{displayController} from "./displayController.js";
 import {taskNew} from "./taskNew.js";
 import {localStorageAccess} from "./localStorageAccess.js";
 import {taskEdit} from "./taskEdit.js";
+import {newProject} from "./newProject.js";
 
 
 //ES Module Exports
 export const newUserInput=new displayController();
 export const initializeLocalStorage=new localStorageAccess();
 export const newTaskEdit=new taskEdit();
+export const newProjectAdd=new newProject();
 
 // Program initialization code
 const runProgram=function()

@@ -4,6 +4,7 @@ import {taskNew} from "./taskNew.js";
 import {taskEdit} from "./taskEdit.js";
 import {initializeLocalStorage} from "./index.js";
 import {newTaskEdit} from "./index.js";
+import {newProjectAdd} from "./index.js";
 
 export class displayController
 {
@@ -42,6 +43,8 @@ export class displayController
         document.querySelector(".addNewProjectButton").addEventListener('click',()=>
         {
           alert("Button clicked");
+          newProjectAdd.newProjectAdd();
+
         });
             
       }
