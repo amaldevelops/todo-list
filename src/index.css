@@ -37,19 +37,22 @@ h3
 .individualTaskDetails p
 {
 font-size:15px;
+font-weight: 100;
 color:#1aa739;
 }
 
 .deleteButton
 {
 font-size:15px;
-background-color:#a71a1a;
+font-weight: 800;
+background-color:#c50505;
 }
 
 .editButton
 {
 font-size:15px;
-background-color:#2f32d1;
+font-weight: 800;
+background-color:#4a4dfa;
 }
 
 

@@ -73,7 +73,7 @@ export class displayController
     
     updateDisplayTaskList()
     {
-      if (initializeLocalStorage.localStorageStatus()==="Empty Storage")
+        if (initializeLocalStorage.localStorageStatus()==="Empty Storage")
         {
           console.log("Local Storage is empty");
         }
@@ -83,49 +83,46 @@ export class displayController
           console.log("Local Storage is NOT empty");
 
           const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-      console.log(currentLocalStorage);
-      console.log(currentLocalStorage["urgentAndImportant"].length);
-      
-      const taskListDiv=document.querySelector(".taskDisplay");
+          console.log(currentLocalStorage);
+          console.log(currentLocalStorage["completeTaskList"].length);
 
-      for (let i=0;i<currentLocalStorage["urgentAndImportant"].length;i++)
-        {
-          const taskDiv=document.createElement("div");
-          taskDiv.classList.add("individualTaskDetails");
-          taskListDiv.append(taskDiv);
-    
-          const projectName=document.createElement("h2");
-          // projectName.innerText=currentLocalStorage["urgentAndImportant"][i];
-          projectName.innerText=JSON.stringify(currentLocalStorage["urgentAndImportant"][i]);
-          taskDiv.append(projectName);
+               
+          const taskListDiv=document.querySelector(".taskDisplay");
 
-          this.editButton=document.createElement("button");
-          this.editButton.classList.add("editButton");
-          this.editButton.innerText="Edit Task";
-          taskDiv.append(this.editButton);
-    
-          const deleteButton=document.createElement("button");
-          deleteButton.classList.add("deleteButton");
-          deleteButton.innerText="Delete Task";
-          taskDiv.append(deleteButton);
-
-          this.editButton.addEventListener('click',()=>
+          for (let i=0;i<currentLocalStorage["completeTaskList"].length;i++)
             {
-              console.log("Edit Button Clicked");
-            });
+              const taskDiv=document.createElement("div");
+              taskDiv.classList.add("individualTaskDetails");
+              taskListDiv.append(taskDiv);
+        
+              const projectName=document.createElement("h2");
+              // projectName.innerText=currentLocalStorage["urgentAndImportant"][i];
+              projectName.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][i]);
+              taskDiv.append(projectName);
 
-          deleteButton.addEventListener('click',()=>
-            {
-              console.log("Delete Button Clicked");
-            });
+              this.editButton=document.createElement("button");
+              this.editButton.classList.add("editButton");
+              this.editButton.innerText="Edit Task";
+              taskDiv.append(this.editButton);
+        
+              const deleteButton=document.createElement("button");
+              deleteButton.classList.add("deleteButton");
+              deleteButton.innerText="Delete Task";
+              taskDiv.append(deleteButton);
 
+              this.editButton.addEventListener('click',()=>
+                {
+                  console.log("Edit Button Clicked");
+                });
+
+              deleteButton.addEventListener('click',()=>
+                {
+                  console.log("Delete Button Clicked");
+                });
         }
         }
       
-      
-
     }
-
 
 }
 
