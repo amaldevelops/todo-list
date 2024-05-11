@@ -27,7 +27,7 @@ export class newProject
                         ]
             },
             {
-                "projectName":"notUrgentbutImportant",
+                "projectName":"notUrgentButImportant",
                 "tasks":[
                             {
                             "taskTitle":"Wash The Car",

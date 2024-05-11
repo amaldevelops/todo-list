@@ -20,7 +20,6 @@ export class taskNew
                 let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
                 let setProjectName=(newTaskObject["projectName"]).toString();
                 console.log(setProjectName);
-                (currentLocalStorage["completeTaskList"][0]["tasks"]).push(newTaskObject);
                 
                 for (let i=0; i<currentLocalStorage["completeTaskList"].length;i++ )
                     {
@@ -29,18 +28,24 @@ export class taskNew
                             {
                                 console.log("Found the Project");
                                 console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
+                                currentLocalStorage["completeTaskList"][i]["tasks"].push(newTaskObject);
+
+
+
                             }
                         
                         else
                         {
                             console.log("Project Not found");
-                            console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
+                            // console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
                         }
+                        console.log(currentLocalStorage);
+                        return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+
 
                     }
 
         
-                return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
             }
         else if(initializeLocalStorage.localStorageStatus()==="Empty Storage")
             {

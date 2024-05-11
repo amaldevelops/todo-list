@@ -45,7 +45,6 @@ export class displayController
       {
         document.querySelector(".addNewProjectButton").addEventListener('click',()=>
         {
-          alert("Button clicked");
           newProjectAdd.newProjectAdd();
 
         });
