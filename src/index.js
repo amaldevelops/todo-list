@@ -14,6 +14,8 @@ export const newUserInput=new displayController();
 export const initializeLocalStorage=new localStorageAccess();
 export const newTaskEdit=new taskEdit();
 export const newProjectAdd=new newProject();
+export const taskNewSave=new taskNew();
+
 
 // Program initialization code
 const runProgram=function()

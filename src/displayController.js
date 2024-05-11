@@ -5,13 +5,14 @@ import {taskEdit} from "./taskEdit.js";
 import {initializeLocalStorage} from "./index.js";
 import {newTaskEdit} from "./index.js";
 import {newProjectAdd} from "./index.js";
+import {taskNewSave} from "./index.js";
 
 export class displayController
 {
     constructor()
     {
-        this.taskNewSave=new taskNew();
-        this.addNewTaskFormCaptureButtonClicked();
+
+
 
     }
 
@@ -19,9 +20,10 @@ export class displayController
     {
         document.querySelector(".addNewTask").addEventListener('click',()=>
         {
+          let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
+          let newTaskObject;
     
-            let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
-            let newTaskObject = {   
+            newTaskObject = {   
                                 projectName:addNewTaskFormData.getAll("projectName"),
                                 taskTitle:addNewTaskFormData.getAll("taskTitle"),
                                 taskDetails:addNewTaskFormData.getAll("taskDetails"),
@@ -30,11 +32,10 @@ export class displayController
                                 
     
                             };
-                            // console.log(newTaskObject);
     
-            this.taskNewSave.saveTask(newTaskObject);
+            taskNewSave.saveTask(newTaskObject);
      
-        })
+        });
 
  
     }
