@@ -25,10 +25,11 @@ export class displayController
     
             newTaskObject = {   
                                 projectName:addNewTaskFormData.getAll("projectName"),
-                                taskTitle:addNewTaskFormData.getAll("taskTitle"),
+                                
+                                tasks:[{taskTitle:addNewTaskFormData.getAll("taskTitle"),
                                 taskDetails:addNewTaskFormData.getAll("taskDetails"),
                                 dueDate:addNewTaskFormData.getAll("dueDate"),
-                                priority:addNewTaskFormData.getAll("priority")
+                                priority:addNewTaskFormData.getAll("priority")}]
                                 
     
                             };

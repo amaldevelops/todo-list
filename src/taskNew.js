@@ -19,8 +19,9 @@ export class taskNew
             {
                 // alert("Local Storage is Not Empty")
                 let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-                // let setProjectName=newTaskObject["completeTaskList"][0]["projectName"];
-                // currentLocalStorage[setProjectName].push(this.newTaskObject);
+                let setProjectName=newTaskObject["projectName"];
+                console.log(setProjectName);
+                // currentLocalStorage[setProjectName].push(newTaskObject);
                 // console.log(typeof(currentLocalStorage));
                 console.log(newTaskObject);
                 // console.log(initializeLocalStorage)
