@@ -61,10 +61,8 @@ export class displayController
       {
             document.querySelector(".urgentImportantButton").addEventListener('click',()=>
             {
-              // const urgentImportantData=initializeLocalStorage.localStorageAccessRead();
               newUserInput.clearDisplayForCurrentTaskList();
               newUserInput.updateDisplayTaskList(0);
-              // console.log(urgentImportantData);
 
             });
 
@@ -74,10 +72,6 @@ export class displayController
       {
         document.querySelector(".notUrgentButImportantButton").addEventListener('click',()=>
         {
-          // const notUrgentButImportantData=initializeLocalStorage.localStorageAccessRead();
-          // console.log(notUrgentButImportantData);
-
-          // newTaskEdit.edit();
           newUserInput.clearDisplayForCurrentTaskList();
           newUserInput.updateDisplayTaskList(1);
           
@@ -102,8 +96,6 @@ export class displayController
           const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
           console.log(currentLocalStorage);
           console.log(this.selectedProject);
-          // console.log(currentLocalStorage["completeTaskList"].length);
-
                
           const taskListDiv=document.querySelector(".taskDisplay");
           console.log(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"]);
@@ -120,7 +112,6 @@ export class displayController
               taskListDiv.append(taskDiv);
         
               const taskFullDetails=document.createElement("h2");
-              // projectName.innerText=currentLocalStorage["urgentAndImportant"][i];
               taskFullDetails.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]);
               taskDiv.append(taskFullDetails);
 
@@ -157,9 +148,6 @@ export class displayController
     while (taskListDiv.firstChild) {
         taskListDiv.removeChild(taskListDiv.firstChild);
     }
-
-
-
 
 
     }
