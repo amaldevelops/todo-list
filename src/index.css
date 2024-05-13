@@ -7,6 +7,10 @@ body
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
        
 }
 
@@ -50,14 +54,14 @@ h3
 {
     font-size:15px;
     font-weight: 800;
-    background-color:#c50505;
+    background-color:#e50606;
 }
 
 .editButton
 {
     font-size:15px;
     font-weight: 800;
-    background-color:#4a4dfa;
+    background-color:#5a5cf5;
 }
 
 
@@ -81,9 +85,9 @@ h3
     display:flex;
     flex-direction: column;
     flex-wrap:wrap;
-    /* justify-content: center; */
-    /* align-items:center; */
-    flex:1 1 10px;
+    /* justify-content: center;
+    align-items:center; */
+    /* flex:1 1 5px; */
     
 }
 
@@ -97,9 +101,9 @@ h3
 
     display:flex;
     flex-direction:column;
-    /* justify-content: center;
-    align-items: center; */
-    flex:1 1 10px;
+    /* justify-content: center; */
+    /* align-items:flex-start; */
+    /* flex:1 1 5px; */
     
 }
 
