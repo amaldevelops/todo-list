@@ -18,12 +18,12 @@ export class taskNew
         if (initializeLocalStorage.localStorageStatus()==="Storage NOT Empty")
             {
                 let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-                let setProjectName=(newTaskObject["projectName"]).toString();
-                // console.log(setProjectName);
-                let addNewTask=newTaskObject["tasks"][0];
+                let setProjectName=(newTaskObject["completeTaskList"][0]["projectName"]).toString();
+                console.log(setProjectName);
+                let addNewTask=newTaskObject["completeTaskList"][0]["tasks"];
                 // console.log(addNewTask);
                 
-                for (let i=0; i<=currentLocalStorage["completeTaskList"].length;i++ )
+                for (let i=0; i<currentLocalStorage["completeTaskList"].length;i++ )
                     {
 
                         if (currentLocalStorage["completeTaskList"][i]["projectName"]==setProjectName)
@@ -31,18 +31,22 @@ export class taskNew
                                 // console.log("Found the Project");
                                 console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
                                 currentLocalStorage["completeTaskList"][i]["tasks"].push(addNewTask);
+                                console.log(currentLocalStorage);
                                 return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
 
                             }
                         
-                        else
-                        {
-                            console.log("Project Not found");
-                            // console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
+                        // else
+                        // {
+                        //     // console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
+                        //     return;
                             
-                        }
-                        // console.log(currentLocalStorage);
+                        // }
+                        // // console.log(currentLocalStorage);
+
+                        console.log("Project Not found");
+
 
 
                     }

@@ -25,15 +25,20 @@ export class displayController
           let newTaskObject;
     
             newTaskObject = {   
+                                completeTaskList:[{
                                 projectName:addNewTaskFormData.getAll("projectName"),
                                 
-                                tasks:[{taskTitle:addNewTaskFormData.getAll("taskTitle"),
-                                taskDetails:addNewTaskFormData.getAll("taskDetails"),
-                                dueDate:addNewTaskFormData.getAll("dueDate"),
-                                priority:addNewTaskFormData.getAll("priority")}]
+                                tasks:[{taskTitle:addNewTaskFormData.getAll("taskTitle").toString(),
+                                taskDetails:addNewTaskFormData.getAll("taskDetails").toString(),
+                                dueDate:addNewTaskFormData.getAll("dueDate").toString(),
+                                priority:addNewTaskFormData.getAll("priority").toString()}]
+                                }]
                                 
     
                             };
+
+                            console.log(newTaskObject["completeTaskList"][0]["projectName"]);
+                            console.log(newTaskObject);
     
             taskNewSave.saveTask(newTaskObject);
      
@@ -58,7 +63,7 @@ export class displayController
             {
               // const urgentImportantData=initializeLocalStorage.localStorageAccessRead();
               newUserInput.clearDisplayForCurrentTaskList();
-              newUserInput.updateDisplayTaskList("urgentAndImportant");
+              newUserInput.updateDisplayTaskList(0);
               // console.log(urgentImportantData);
 
             });
@@ -74,7 +79,7 @@ export class displayController
 
           // newTaskEdit.edit();
           newUserInput.clearDisplayForCurrentTaskList();
-          newUserInput.updateDisplayTaskList("notUrgentButImportant");
+          newUserInput.updateDisplayTaskList(1);
           
         });
             
@@ -96,6 +101,7 @@ export class displayController
 
           const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
           console.log(currentLocalStorage);
+          console.log(this.selectedProject);
           // console.log(currentLocalStorage["completeTaskList"].length);
 
                
