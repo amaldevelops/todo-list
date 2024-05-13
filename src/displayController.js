@@ -58,7 +58,7 @@ export class displayController
             {
               // const urgentImportantData=initializeLocalStorage.localStorageAccessRead();
               newUserInput.clearDisplayForCurrentTaskList();
-              newUserInput.updateDisplayTaskList();
+              newUserInput.updateDisplayTaskList("urgentAndImportant");
               // console.log(urgentImportantData);
 
             });
@@ -99,8 +99,10 @@ export class displayController
 
                
           const taskListDiv=document.querySelector(".taskDisplay");
+          console.log(currentLocalStorage["completeTaskList"][0]["tasks"]);
 
-          for (let i=0;i<currentLocalStorage["completeTaskList"].length;i++)
+
+          for (let i=0;i<currentLocalStorage["completeTaskList"][0]["tasks"].length;i++)
             {
               const taskDiv=document.createElement("div");
               taskDiv.classList.add("individualTaskDetails");
@@ -108,7 +110,7 @@ export class displayController
         
               const projectName=document.createElement("h2");
               // projectName.innerText=currentLocalStorage["urgentAndImportant"][i];
-              projectName.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][i]);
+              projectName.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][0]["tasks"][i]);
               taskDiv.append(projectName);
 
               this.editButton=document.createElement("button");

@@ -29,6 +29,9 @@ const runProgram=function()
     
     initializeLocalStorage.localStorageAccessRead();
 
+    newUserInput.clearDisplayForCurrentTaskList();
+    newUserInput.updateDisplayTaskList();
+
 
 
     //Code to check for Local Storage availability
