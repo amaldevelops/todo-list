@@ -6,6 +6,7 @@ import {initializeLocalStorage} from "./index.js";
 import {newTaskEdit} from "./index.js";
 import {newProjectAdd} from "./index.js";
 import {taskNewSave} from "./index.js";
+import {newUserInput} from "./index.js";
 
 export class displayController
 {
@@ -55,8 +56,10 @@ export class displayController
       {
             document.querySelector(".urgentImportantButton").addEventListener('click',()=>
             {
-              const urgentImportantData=initializeLocalStorage.localStorageAccessRead();
-              console.log(urgentImportantData);
+              // const urgentImportantData=initializeLocalStorage.localStorageAccessRead();
+              newUserInput.clearDisplayForCurrentTaskList();
+              newUserInput.updateDisplayTaskList();
+              // console.log(urgentImportantData);
 
             });
 
@@ -69,16 +72,19 @@ export class displayController
           // const notUrgentButImportantData=initializeLocalStorage.localStorageAccessRead();
           // console.log(notUrgentButImportantData);
 
-          newTaskEdit.edit();
+          // newTaskEdit.edit();
+          newUserInput.clearDisplayForCurrentTaskList();
+          newUserInput.updateDisplayTaskList();
           
         });
             
       }
 
     
-    updateDisplayTaskList()
+    updateDisplayTaskList(selectedProject)
     {
-        if (initializeLocalStorage.localStorageStatus()==="Empty Storage")
+        
+      if (initializeLocalStorage.localStorageStatus()==="Empty Storage")
         {
           console.log("Local Storage is empty");
         }
@@ -88,8 +94,8 @@ export class displayController
           console.log("Local Storage is NOT empty");
 
           const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-          console.log(currentLocalStorage);
-          console.log(currentLocalStorage["completeTaskList"].length);
+          // console.log(currentLocalStorage);
+          // console.log(currentLocalStorage["completeTaskList"].length);
 
                
           const taskListDiv=document.querySelector(".taskDisplay");
@@ -127,6 +133,22 @@ export class displayController
         }
         }
       
+    }
+
+    clearDisplayForCurrentTaskList()
+    {
+      
+      const taskListDiv = document.querySelector(".taskDisplay");
+
+    // Remove all child elements of taskListDiv
+    while (taskListDiv.firstChild) {
+        taskListDiv.removeChild(taskListDiv.firstChild);
+    }
+
+
+
+
+
     }
 
 }
