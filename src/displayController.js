@@ -100,6 +100,10 @@ export class displayController
           const taskListDiv=document.querySelector(".taskDisplay");
           console.log(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"]);
 
+          const title=document.createElement("h1");
+          title.innerText="Welcome to Amal's To do App, below you can find the selected Project list";
+          taskListDiv.append(title);
+
 
           for (let i=0;i<currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"].length;i++)
             {
