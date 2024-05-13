@@ -30,7 +30,7 @@ const runProgram=function()
     initializeLocalStorage.localStorageAccessRead();
 
     newUserInput.clearDisplayForCurrentTaskList();
-    newUserInput.updateDisplayTaskList();
+    newUserInput.updateDisplayTaskList(0);
 
 
 

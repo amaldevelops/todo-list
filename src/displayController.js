@@ -74,7 +74,7 @@ export class displayController
 
           // newTaskEdit.edit();
           newUserInput.clearDisplayForCurrentTaskList();
-          newUserInput.updateDisplayTaskList();
+          newUserInput.updateDisplayTaskList("notUrgentButImportant");
           
         });
             
@@ -83,6 +83,7 @@ export class displayController
     
     updateDisplayTaskList(selectedProject)
     {
+      this.selectedProject=selectedProject;
         
       if (initializeLocalStorage.localStorageStatus()==="Empty Storage")
         {
@@ -94,15 +95,15 @@ export class displayController
           console.log("Local Storage is NOT empty");
 
           const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-          // console.log(currentLocalStorage);
+          console.log(currentLocalStorage);
           // console.log(currentLocalStorage["completeTaskList"].length);
 
                
           const taskListDiv=document.querySelector(".taskDisplay");
-          console.log(currentLocalStorage["completeTaskList"][0]["tasks"]);
+          console.log(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"]);
 
 
-          for (let i=0;i<currentLocalStorage["completeTaskList"][0]["tasks"].length;i++)
+          for (let i=0;i<currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"].length;i++)
             {
               const taskDiv=document.createElement("div");
               taskDiv.classList.add("individualTaskDetails");
