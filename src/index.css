@@ -61,18 +61,11 @@ h3
 }
 
 
-
-.softwareArchitecture
-{
-    background-color: #290303;
-    opacity: 0.9;
-}
-
 .appContainer
 {
     display:grid;
-    grid-template-columns: 1fr ;
-    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 2fr 1fr ;
+    grid-template-rows: 2fr 1fr 2fr;
     gap:10px;
     opacity: 0.9;
 }
@@ -88,9 +81,10 @@ h3
     display:flex;
     flex-direction: column;
     flex-wrap:wrap;
-    justify-content: center;
-    align-items:center;
-
+    /* justify-content: center; */
+    /* align-items:center; */
+    flex:1 1 10px;
+    
 }
 
 .taskDisplay
@@ -103,9 +97,29 @@ h3
 
     display:flex;
     flex-direction:column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
+    flex:1 1 10px;
     
+}
+
+.individualTaskDetails
+{
+    display:flex;
+    flex-direction:column;
+    /* justify-content: center;
+    align-items: center; */
+    /* flex:1 1 10px; */
+}
+
+.softwareArchitecture
+{
+    background-color: #290303;
+    opacity: 0.9;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
 }
 
 button
