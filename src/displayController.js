@@ -111,14 +111,18 @@ export class displayController
 
           for (let i=0;i<currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"].length;i++)
             {
+              const projectName=document.createElement("h1");
+              projectName.innerText="Project Name" + JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["projectName"]);
+              taskListDiv.append(projectName);
+
               const taskDiv=document.createElement("div");
               taskDiv.classList.add("individualTaskDetails");
               taskListDiv.append(taskDiv);
         
-              const projectName=document.createElement("h2");
+              const taskFullDetails=document.createElement("h2");
               // projectName.innerText=currentLocalStorage["urgentAndImportant"][i];
-              projectName.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][0]["tasks"][i]);
-              taskDiv.append(projectName);
+              taskFullDetails.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]);
+              taskDiv.append(taskFullDetails);
 
               this.editButton=document.createElement("button");
               this.editButton.classList.add("editButton");

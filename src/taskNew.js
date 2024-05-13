@@ -56,7 +56,7 @@ export class taskNew
         else if(initializeLocalStorage.localStorageStatus()==="Empty Storage")
             {
                 alert("Local Storage is Empty")
-                return initializeLocalStorage.localStorageAccessWrite(this.newTaskObject);
+                return initializeLocalStorage.localStorageAccessWrite(newTaskObject);
             }
         
 
