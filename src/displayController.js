@@ -39,12 +39,12 @@ export class displayController
     
                             };
 
-                            console.log(newTaskObject["completeTaskList"][0]["projectName"]);
-                            console.log(newTaskObject);
+          console.log(newTaskObject["completeTaskList"][0]["projectName"]);
+          console.log(newTaskObject);
     
-            taskNewSave.saveTask(newTaskObject);
-            newUserInput.clearDisplayForCurrentTaskList();
-            newUserInput.updateDisplayTaskList(0);
+          taskNewSave.saveTask(newTaskObject);
+          newUserInput.clearDisplayForCurrentTaskList();
+          newUserInput.updateDisplayTaskList(0);
      
         });
 
@@ -64,12 +64,12 @@ export class displayController
 
     urgentAndImportantButtonClicked()
       {
-            document.querySelector(".urgentImportantButton").addEventListener('click',()=>
-            {
-              newUserInput.clearDisplayForCurrentTaskList();
-              newUserInput.updateDisplayTaskList(0);
+        document.querySelector(".urgentImportantButton").addEventListener('click',()=>
+        {
+          this.clearDisplayForCurrentTaskList();
+          this.updateDisplayTaskList(0);
 
-            });
+        });
 
       }
 
@@ -77,8 +77,8 @@ export class displayController
       {
         document.querySelector(".notUrgentButImportantButton").addEventListener('click',()=>
         {
-          newUserInput.clearDisplayForCurrentTaskList();
-          newUserInput.updateDisplayTaskList(1);
+          this.clearDisplayForCurrentTaskList();
+          this.updateDisplayTaskList(1);
           
         });
             
@@ -144,6 +144,8 @@ export class displayController
                   const taskFullDetailsInstance=taskFullDetails;
 
                   newTaskEdit.edit(taskFullDetailsInstance);
+
+
                 });
 
               deleteButton.addEventListener('click',()=>

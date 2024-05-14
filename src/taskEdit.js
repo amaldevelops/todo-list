@@ -32,10 +32,16 @@ export class taskEdit
         // Output the taskTitle
         console.log(taskTitle);
 
-        
-
-
         // console.log(initializeLocalStorage.localStorageAccessRead());
+        this.taskEditForm();
 
+    }
+
+    taskEditForm()
+    {
+        const taskEditDiv=document.createElement("div");
+        
+        const taskEditForm=document.createElement("form");
+        console.log("Task Edit Form activated")
     }
 }
