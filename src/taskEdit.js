@@ -14,6 +14,7 @@ export class taskEdit
         
         // initializeLocalStorage.localStorageStatus();
         // initializeLocalStorage.localStorageAccessWrite(this.test);
+        console.log("Edit Button Clicked");
 
     }
 }

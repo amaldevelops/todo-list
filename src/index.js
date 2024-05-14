@@ -6,6 +6,7 @@ import{displayController} from "./displayController.js";
 import {taskNew} from "./taskNew.js";
 import {localStorageAccess} from "./localStorageAccess.js";
 import {taskEdit} from "./taskEdit.js";
+import{taskDelete} from "./taskDelete.js";
 import {newProject} from "./newProject.js";
 
 
@@ -15,6 +16,7 @@ export const initializeLocalStorage=new localStorageAccess();
 export const newTaskEdit=new taskEdit();
 export const newProjectAdd=new newProject();
 export const taskNewSave=new taskNew();
+export const taskDeleteNow=new taskDelete();
 
 
 // Program initialization code
