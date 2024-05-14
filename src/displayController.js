@@ -120,6 +120,10 @@ export class displayController
               taskDiv.classList.add("individualTaskDetails");
               taskListDiv.append(taskDiv);
         
+              // const taskFullDetails=document.createElement("h2");
+              // taskFullDetails.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]);
+              // taskDiv.append(taskFullDetails);
+
               const taskFullDetails=document.createElement("h2");
               taskFullDetails.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]);
               taskDiv.append(taskFullDetails);
@@ -136,8 +140,10 @@ export class displayController
 
               this.editButton.addEventListener('click',()=>
                 {
-                  
-                  newTaskEdit.edit();
+                  const clickedEditButtonInstance=this.editButton;
+                  const taskFullDetailsInstance=taskFullDetails;
+
+                  newTaskEdit.edit(taskFullDetailsInstance);
                 });
 
               deleteButton.addEventListener('click',()=>
