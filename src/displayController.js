@@ -120,12 +120,9 @@ export class displayController
               taskDiv.classList.add("individualTaskDetails");
               taskListDiv.append(taskDiv);
         
-              // const taskFullDetails=document.createElement("h2");
-              // taskFullDetails.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]);
-              // taskDiv.append(taskFullDetails);
-
-              const taskFullDetails=document.createElement("h2");
+              const taskFullDetails=document.createElement("p");
               taskFullDetails.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]);
+              // taskFullDetails.innerText=(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["taskTitle"]);
               taskDiv.append(taskFullDetails);
 
               this.editButton=document.createElement("button");
