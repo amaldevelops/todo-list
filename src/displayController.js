@@ -39,8 +39,10 @@ export class displayController
     
                             };
 
-          console.log(newTaskObject["completeTaskList"][0]["projectName"]);
+
+          console.log(`Newly captured Task info : + ${newTaskObject}`);
           console.log(newTaskObject);
+          console.log(newTaskObject["tasks"]);
     
           taskNewSave.saveTask(newTaskObject);
           newUserInput.clearDisplayForCurrentTaskList();
