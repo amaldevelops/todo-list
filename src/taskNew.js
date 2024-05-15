@@ -20,8 +20,9 @@ export class taskNew
                 
                 for (let i=0; i<currentLocalStorage["completeTaskList"].length;i++ )
                     {
+                        console.log(currentLocalStorage["completeTaskList"].length);
 
-                        if (currentLocalStorage["completeTaskList"][i]["projectName"]==setProjectName)
+                        if (currentLocalStorage["completeTaskList"][i]["projectName"]===setProjectName)
                             {
                                 console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
                                 currentLocalStorage["completeTaskList"][i]["tasks"].push(addNewTask);
@@ -31,9 +32,10 @@ export class taskNew
 
                             }
                         
-                        console.log("Project Not found");
+                        
 
                     }
+                    console.log("Project Not found");
 
         
             }

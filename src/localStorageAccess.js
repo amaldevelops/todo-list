@@ -8,11 +8,11 @@ constructor (saveRead)
 
 localStorageStatus(status) //This will check whether the localStorage is empty
 {
-  this.status=status;
+  // this.status=status;
   if (!localStorage.getItem("taskStorage"))
     {
       console.log("Local Storage Empty");
-      console.log(this.status);
+      console.log(status);
       return "Empty Storage";
     
     }

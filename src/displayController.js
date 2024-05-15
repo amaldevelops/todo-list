@@ -40,9 +40,9 @@ export class displayController
                             };
 
 
-          console.log(`Newly captured Task info : + ${newTaskObject}`);
-          console.log(newTaskObject);
-          console.log(newTaskObject["tasks"]);
+          // console.log(`Newly captured Task info : + ${newTaskObject}`);
+          // console.log(newTaskObject);
+          // console.log(newTaskObject["tasks"]);
     
           taskNewSave.saveTask(newTaskObject);
           newUserInput.clearDisplayForCurrentTaskList();
@@ -101,11 +101,11 @@ export class displayController
           console.log("Local Storage is NOT empty");
 
           const currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-          console.log(currentLocalStorage);
-          console.log(this.selectedProject);
+          // console.log(currentLocalStorage);
+          // console.log(this.selectedProject);
                
           const taskListDiv=document.querySelector(".taskDisplay");
-          console.log(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"]);
+          // console.log(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"]);
 
           const title=document.createElement("h1");
           title.innerText="Welcome to Amal's To do App, below you can find the selected Project list";
