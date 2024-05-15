@@ -31,6 +31,14 @@ export class taskNew
 
 
                             }
+
+                        else if (currentLocalStorage["completeTaskList"][i]["projectName"]!=setProjectName)
+                        {
+                            currentLocalStorage["completeTaskList"].push({projectName:setProjectName},addNewTask);
+                            console.log(currentLocalStorage);
+                            return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+
+                        };
                         
                         
 
