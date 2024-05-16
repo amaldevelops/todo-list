@@ -28,7 +28,7 @@ export class displayController
     
             newTaskObject = {   
                                 completeTaskList:[{
-                                projectName:addNewTaskFormData.getAll("projectName"),
+                                projectName:addNewTaskFormData.getAll("projectName").toString(),
                                 
                                 tasks:[{taskTitle:addNewTaskFormData.getAll("taskTitle").toString(),
                                 taskDetails:addNewTaskFormData.getAll("taskDetails").toString(),

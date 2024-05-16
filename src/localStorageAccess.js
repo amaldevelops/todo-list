@@ -11,15 +11,15 @@ localStorageStatus(status) //This will check whether the localStorage is empty
   // this.status=status;
   if (!localStorage.getItem("taskStorage"))
     {
-      console.log("Local Storage Empty");
-      console.log(status);
+      // console.log("Local Storage Empty");
+      // console.log(status);
       return "Empty Storage";
     
     }
   
   else
   {
-    console.log("Local Storage is Not Empty");
+    // console.log("Local Storage is Not Empty");
     return "Storage NOT Empty"
   }
 }
