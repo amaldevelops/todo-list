@@ -50,10 +50,34 @@ export class newProject
             }
     }
 
-    newProjectAdd()
+    newProjectAdd(newProjectAdd)
     {
-        initializeLocalStorage.localStorageStatus();
-        initializeLocalStorage.localStorageAccessWrite(this.test);
+        let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
+        let newProjectName=newProjectAdd;
+        // initializeLocalStorage.localStorageStatus();
+        // initializeLocalStorage.localStorageAccessWrite(this.test);
+        console.log("Below is the passed Project Name");
+        console.log(newProjectAdd);
+        for (let i=0;currentLocalStorage["completeTaskList"].length,i++;)
+            {
+                if (currentLocalStorage["completeTaskList"][i]["projectName"]!==newProjectName)
+                    {
+                        console.log("Project Name exists, so project name will not be added");
+                    }
+                
+                
+            }
+            // if (initializeLocalStorage["completeTaskList"][i]["projectName"]===!newProjectName)
+            //     {
+            //         console.log("Project Name does not exist, so project name will be ADDED");
+            //     }
+        
+            // return initializeLocalStorage.localStorageAccessWrite(newProjectName);
+
+       // this.currentLocalStorage["completeTaskList"].push({projectName:setProjectName,tasks:[addNewTask]});
+       // console.log(this.currentLocalStorage);
+      // return initializeLocalStorage.localStorageAccessWrite(this.currentLocalStorage);
+
     }
 
 }

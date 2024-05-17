@@ -2,20 +2,26 @@
 
 import {localStorageAccess} from "./localStorageAccess.js";
 import {initializeLocalStorage} from "./index.js";
+import {newProjectAdd} from "./index.js"
 
 export class taskNew
 {
+    constructor()
+    {
+
+
+    }
 
 
     saveTask(newTaskObject)
     {
-       
+        let setProjectName=(newTaskObject["completeTaskList"][0]["projectName"]).toString();//This will get the project name from new task
+
 
         if (initializeLocalStorage.localStorageStatus()==="Storage NOT Empty")
             {
                 let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-                let setProjectName=(newTaskObject["completeTaskList"][0]["projectName"]).toString();//This will get the project name from new task
-                console.log(setProjectName);
+                // console.log(setProjectName);
                 let addNewTask=newTaskObject["completeTaskList"][0]["tasks"][0];//This will get the Tasks from new task
                 
                 for (let i=0; i<currentLocalStorage["completeTaskList"].length;i++ )
@@ -27,22 +33,20 @@ export class taskNew
                                 console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
                                 currentLocalStorage["completeTaskList"][i]["tasks"].push(addNewTask);
                                 console.log(currentLocalStorage);
-
-                                
-
-                                return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+                             
+                               return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
 
                             }
 
                         else if (currentLocalStorage["completeTaskList"][i]["projectName"]!==setProjectName) //This code will add a new Project list if it does not exist
                         {
-                            currentLocalStorage["completeTaskList"].push({projectName:setProjectName,tasks:[addNewTask]});
-                            // currentLocalStorage["completeTaskList"][i]["tasks"].push(addNewTask);
+                            // currentLocalStorage["completeTaskList"].push({projectName:setProjectName,tasks:[addNewTask]});
+                            // currentLocalStorage["completeTaskList"].push({projectName:setProjectName});
+                            // console.log(currentLocalStorage);
 
-
-                            console.log(currentLocalStorage);
-                            return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+                            // return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+                            newProjectAdd.newProjectAdd(setProjectName);
 
                         };
                         
@@ -65,5 +69,7 @@ export class taskNew
 
 
     }
+
+
 }
 
