@@ -54,19 +54,38 @@ export class newProject
     {
         let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
         let newProjectName=newProjectAdd;
+        let projectExists=false;
         // initializeLocalStorage.localStorageStatus();
         // initializeLocalStorage.localStorageAccessWrite(this.test);
         console.log("Below is the passed Project Name");
         console.log(newProjectAdd);
-        for (let i=0;currentLocalStorage["completeTaskList"].length,i++;)
+        for (let i=0;i<currentLocalStorage["completeTaskList"].length;i++)
             {
-                if (currentLocalStorage["completeTaskList"][i]["projectName"]!==newProjectName)
+                if (currentLocalStorage["completeTaskList"][0]["projectName"]===newProjectName)
                     {
-                        console.log("Project Name exists, so project name will not be added");
+                        projectExists=true;
+                        break;
                     }
                 
-                
             }
+
+        if (projectExists)
+            {
+                console.log("Project Name exists, so project name will not be added");
+                
+
+            }
+        
+        else 
+        {
+            console.log("Project Name does not exist, so project name will be ADDED");
+            currentLocalStorage["completeTaskList"].push({
+                projectName: newProjectName,
+                tasks: [] // Assuming a new project starts with an empty task list
+            });
+            return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+
+        }
             // if (initializeLocalStorage["completeTaskList"][i]["projectName"]===!newProjectName)
             //     {
             //         console.log("Project Name does not exist, so project name will be ADDED");

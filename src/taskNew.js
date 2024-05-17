@@ -34,7 +34,7 @@ export class taskNew
                                 currentLocalStorage["completeTaskList"][i]["tasks"].push(addNewTask);
                                 console.log(currentLocalStorage);
                              
-                               return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+                                return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
 
                             }
