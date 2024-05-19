@@ -83,7 +83,7 @@ export class newProject
                 projectName: newProjectName,
                 tasks: [] // Assuming a new project starts with an empty task list
             });
-            return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
+            initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
         }
             // if (initializeLocalStorage["completeTaskList"][i]["projectName"]===!newProjectName)

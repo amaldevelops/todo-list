@@ -39,8 +39,8 @@ export class taskNew
 
                             }
 
-                        else if (currentLocalStorage["completeTaskList"][i]["projectName"]!==setProjectName) //This code will add a new Project list if it does not exist
-                        {
+                        // else if (currentLocalStorage["completeTaskList"][i]["projectName"]!==setProjectName) //This code will add a new Project list if it does not exist
+                        // {
                             // currentLocalStorage["completeTaskList"].push({projectName:setProjectName,tasks:[addNewTask]});
                             // currentLocalStorage["completeTaskList"].push({projectName:setProjectName});
                             // console.log(currentLocalStorage);
@@ -49,13 +49,14 @@ export class taskNew
 
                             // newProjectAdd.newProjectAdd(setProjectName);
 
-                        };
+                        // };
                         
                         
 
                     }
                     console.log("Project Not found");
                     newProjectAdd.newProjectAdd(setProjectName);
+                    this.saveTask(newTaskObject);
 
         
             }
