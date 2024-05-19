@@ -46,7 +46,8 @@ export class taskNew
                             // console.log(currentLocalStorage);
 
                             // return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
-                            newProjectAdd.newProjectAdd(setProjectName);
+
+                            // newProjectAdd.newProjectAdd(setProjectName);
 
                         };
                         
@@ -54,6 +55,7 @@ export class taskNew
 
                     }
                     console.log("Project Not found");
+                    newProjectAdd.newProjectAdd(setProjectName);
 
         
             }
