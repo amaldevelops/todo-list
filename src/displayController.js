@@ -124,7 +124,7 @@ export class displayController
           for (let i=0;i<currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"].length;i++)
             {
               const projectName=document.createElement("h1");
-              projectName.innerText="Project Name" + JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["projectName"]);
+              projectName.innerText="Project Name: " + currentLocalStorage["completeTaskList"][this.selectedProject]["projectName"];
               taskListDiv.append(projectName);
 
               const taskDiv=document.createElement("div");
@@ -133,8 +133,31 @@ export class displayController
         
               const taskFullDetails=document.createElement("p");
               taskFullDetails.innerText=JSON.stringify(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]);
-              // taskFullDetails.innerText=(currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["taskTitle"]);
-              taskDiv.append(taskFullDetails);
+              // taskDiv.append(taskFullDetails);
+
+              const taskTitle=document.createElement("p");
+              taskTitle.innerText="Task Title: " + currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["taskTitle"];
+              taskDiv.append(taskTitle);
+
+              const taskDetails=document.createElement("p");
+              taskDetails.innerText="Task Details: " + currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["taskDetails"];
+              taskDiv.append(taskDetails);
+
+              const taskDueDate=document.createElement("p");
+              taskDueDate.innerText="Task Due Date: " + currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["dueDate"];
+              taskDiv.append(taskDueDate);
+
+              const taskPriority=document.createElement("p");
+              taskPriority.innerText="Task Priority: " + currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["priority"];
+              taskDiv.append(taskPriority);
+
+              const taskProjectName=document.createElement("p");
+              taskProjectName.innerText="Project Name: " + currentLocalStorage["completeTaskList"][this.selectedProject]["projectName"];
+              taskDiv.append(taskProjectName)
+
+              const taskUUID=document.createElement("p");
+              taskUUID.innerText="Task UUID: " + currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["UUID"];
+              taskDiv.append(taskUUID)
 
               this.editButton=document.createElement("button");
               this.editButton.classList.add("editButton");
