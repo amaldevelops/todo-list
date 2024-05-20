@@ -13,10 +13,6 @@ export class taskEdit
     edit(clickedEditButtonInstance)
     {
         
-        // console.log("Edit Button Clicked");
-        // console.log(clickedEditButtonInstance);
-        // console.log(typeof(clickedEditButtonInstance));
-
         // Get the inner HTML content of the element
         const innerHTML = clickedEditButtonInstance.innerHTML;
         // console.log("Inner HTML is : " + innerHTML);
@@ -29,9 +25,6 @@ export class taskEdit
 
         // Accessing the taskTitle property
         const taskTitle = jsonObject.taskTitle;
-
-        // Output the taskTitle
-        // console.log(taskTitle);
 
         // console.log(initializeLocalStorage.localStorageAccessRead());
         this.taskEditForm(jsonObject);
@@ -58,26 +51,10 @@ export class taskEdit
 
         
         const taskIndex=this.findUUID(UUID.innerHTML);
-        // console.log(taskIndex);
-
-        // console.log(this.currentStorage);
-
-        // this.currentStorage["completeTaskList"][i]["tasks"][j].push(addNewTask);
-
-        // console.log(this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]]);
-
-
-        // console.log(this.currentStorage);
-
-        // let returnedAmendedData=this.saveAmendedTask();
-        // console.log(returnedAmendedData);
-
-        this.saveAmendedTask(taskIndex);
-
         
-
-        // this.currentStorage.localStorageAccessWrite()
-
+        
+        this.saveAmendedTask(taskIndex);
+  
 
     }
 
@@ -91,7 +68,6 @@ export class taskEdit
             for (let j = 0; j < tasks.length; j++) {
                 if (tasks[j].UUID === searchUUID) {
                     console.log(`Task found at index ${i} in 'completeTaskList', task index ${j} in 'tasks':`, tasks[j]);
-                    // return this.currentStorage["completeTaskList"][i]["tasks"][j];
                     return [i,j];
                     // return (["completeTaskList"][i]["tasks"][j]); // Found the task, no need to continue searching
                 }
@@ -135,18 +111,7 @@ export class taskEdit
 
             initializeLocalStorage.localStorageAccessWrite(this.currentStorage);
 
-
-
-            // console.log(this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]]);
-
-
-            
-            //   return (newTaskObject);
-
-    // 
-            //   newUserInput.clearDisplayForCurrentTaskList();
-            //   newUserInput.updateDisplayTaskList(0);
-         
+        
             });
     }
 }

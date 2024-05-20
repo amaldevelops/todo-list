@@ -8,6 +8,7 @@ import {localStorageAccess} from "./localStorageAccess.js";
 import {taskEdit} from "./taskEdit.js";
 import{taskDelete} from "./taskDelete.js";
 import {newProject} from "./newProject.js";
+import {uuIDManagement} from "./uuIDManagement.js";
 
 
 //ES Module Exports
@@ -17,6 +18,7 @@ export const newTaskEdit=new taskEdit();
 export const newProjectAdd=new newProject();
 export const taskNewSave=new taskNew();
 export const taskDeleteNow=new taskDelete();
+export const uuidInstance=new uuIDManagement();
 
 
 // Program initialization code
