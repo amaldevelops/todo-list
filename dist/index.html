@@ -10,6 +10,11 @@
    
 
     <div class="appContainer">
+
+        <div class="testPopover" popover>
+            <h1>Pop Over works</h1>
+        </div>
+
         
         <div class="taskDisplay">
             <h1>Current Task List</h1>
@@ -18,7 +23,7 @@
         </div>
         
         <div class="menuPane">
-            <div class="newTaskDiv">
+            <div class="newTaskDiv" popover>
             <form action="" method="get" id="newTaskForm">
                 <label for="taskTitle">Task Title</label>
                 <input type="text" name="taskTitle"  required id="taskTitle">
@@ -47,8 +52,10 @@
             </form>
 
         </div> 
+        
+            <button type="button" class="addNewTaskButton">Add New Task</button>
 
-            <h2>Projects</h2>
+            <h2>Current Project List</h2>
             <button type="button" class="urgentImportantButton">Urgent & Important (Default)</button>
             <button type="button" class="notUrgentButImportantButton">Not Urgent but Important</button>
             <button type="button" class="addNewProjectButton">Add New Project</button>

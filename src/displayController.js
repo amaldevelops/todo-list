@@ -19,6 +19,15 @@ export class displayController
 
     }
 
+    clickedAddNewTask()
+    {
+      document.querySelector(".addNewTaskButton").addEventListener('click',()=>
+      {
+        const popover=document.querySelector(".newTaskDiv");
+        const popupOpened = popover.togglePopover();
+      });
+    }
+
     addNewTaskFormCaptureButtonClicked()
     {
         document.querySelector(".addNewTask").addEventListener('click',()=>

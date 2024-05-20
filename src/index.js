@@ -28,6 +28,7 @@ const runProgram=function()
     newUserInput.urgentAndImportantButtonClicked();
     newUserInput.notUrgentButImportantButtonClicked();
     newUserInput.addNewProjectButtonClicked();
+    newUserInput.clickedAddNewTask();
     
     initializeLocalStorage.localStorageAccessRead();
 

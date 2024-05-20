@@ -33,15 +33,19 @@ export class taskEdit
         console.log(taskTitle);
 
         // console.log(initializeLocalStorage.localStorageAccessRead());
-        this.taskEditForm();
+        this.taskEditForm(jsonObject);
 
     }
 
-    taskEditForm()
+    taskEditForm(taskDetailsToEdit)
     {
-        const taskEditDiv=document.createElement("div");
+        // const taskEditDiv=document.createElement("div");
         
-        const taskEditForm=document.createElement("form");
+        // const taskEditForm=document.createElement("form");
         console.log("Task Edit Form activated")
+        console.log(taskDetailsToEdit);
+        const popover=document.querySelector(".testPopover");
+        const popupOpened = popover.togglePopover();
+
     }
 }
