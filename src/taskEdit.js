@@ -6,19 +6,20 @@ export class taskEdit
 
     constructor()
     {
-        
+        this.currentStorage = initializeLocalStorage.localStorageAccessRead();
+
     }
 
     edit(clickedEditButtonInstance)
     {
         
-        console.log("Edit Button Clicked");
-        console.log(clickedEditButtonInstance);
-        console.log(typeof(clickedEditButtonInstance));
+        // console.log("Edit Button Clicked");
+        // console.log(clickedEditButtonInstance);
+        // console.log(typeof(clickedEditButtonInstance));
 
         // Get the inner HTML content of the element
         const innerHTML = clickedEditButtonInstance.innerHTML;
-        console.log("Inner HTML is : " + innerHTML);
+        // console.log("Inner HTML is : " + innerHTML);
 
         // Extracting JSON string from the HTML string
         const jsonString = innerHTML.match(/\{.*\}/)[0];
@@ -30,7 +31,7 @@ export class taskEdit
         const taskTitle = jsonObject.taskTitle;
 
         // Output the taskTitle
-        console.log(taskTitle);
+        // console.log(taskTitle);
 
         // console.log(initializeLocalStorage.localStorageAccessRead());
         this.taskEditForm(jsonObject);
@@ -39,8 +40,8 @@ export class taskEdit
 
     taskEditForm(taskDetailsToEdit)
     {
-        console.log("Task Edit Form activated")
-        console.log(taskDetailsToEdit.projectName);
+        // console.log("Task Edit Form activated")
+        // console.log(taskDetailsToEdit.projectName);
         const popover=document.querySelector(".newTaskDiv");
         const popupOpened = popover.togglePopover();
 
@@ -57,24 +58,41 @@ export class taskEdit
 
         
         const taskIndex=this.findUUID(UUID.innerHTML);
-        console.log(taskIndex);
+        // console.log(taskIndex);
+
+        // console.log(this.currentStorage);
+
+        // this.currentStorage["completeTaskList"][i]["tasks"][j].push(addNewTask);
+
+        // console.log(this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]]);
+
+
+        // console.log(this.currentStorage);
+
+        // let returnedAmendedData=this.saveAmendedTask();
+        // console.log(returnedAmendedData);
+
+        this.saveAmendedTask(taskIndex);
+
         
 
-        // initializeLocalStorage.localStorageAccessWrite();
+        // this.currentStorage.localStorageAccessWrite()
+
+
     }
 
     findUUID(searchUUID)
     {
-        let currentStorage = initializeLocalStorage.localStorageAccessRead();
 
-        for (let i = 0; i < currentStorage['completeTaskList'].length; i++) {
-            let tasks = currentStorage['completeTaskList'][i]['tasks'];
+        for (let i = 0; i < this.currentStorage['completeTaskList'].length; i++) {
+            let tasks = this.currentStorage['completeTaskList'][i]['tasks'];
     
             // Iterate over each task in the 'tasks' array
             for (let j = 0; j < tasks.length; j++) {
                 if (tasks[j].UUID === searchUUID) {
                     console.log(`Task found at index ${i} in 'completeTaskList', task index ${j} in 'tasks':`, tasks[j]);
-                    return currentStorage["completeTaskList"][i]["tasks"][j];
+                    // return this.currentStorage["completeTaskList"][i]["tasks"][j];
+                    return [i,j];
                     // return (["completeTaskList"][i]["tasks"][j]); // Found the task, no need to continue searching
                 }
             }
@@ -82,5 +100,53 @@ export class taskEdit
     
         console.log("No task found with the UUID:", searchUUID);
 
+    }
+
+    saveAmendedTask(taskIndex)
+    {
+        document.querySelector(".editTask").addEventListener('click',()=>
+            {
+                       
+              let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
+              let newTaskObject = {   
+                                    completeTaskList:[{
+                                    projectName:addNewTaskFormData.getAll("projectName").toString(),
+                                    
+                                    tasks:[{taskTitle:addNewTaskFormData.getAll("taskTitle").toString(),
+                                    taskDetails:addNewTaskFormData.getAll("taskDetails").toString(),
+                                    dueDate:addNewTaskFormData.getAll("dueDate").toString(),
+                                    priority:addNewTaskFormData.getAll("priority").toString()
+                                    }]
+                                    }]
+                                    
+        
+                                };
+        
+              
+              console.log(taskIndex);
+
+              console.log(newTaskObject);
+
+              
+
+            (this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]])=newTaskObject["completeTaskList"][0]["tasks"][0];
+
+            console.log(this.currentStorage);
+
+            initializeLocalStorage.localStorageAccessWrite(this.currentStorage);
+
+
+
+            // console.log(this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]]);
+
+
+            
+            //   return (newTaskObject);
+
+    // 
+            //   newUserInput.clearDisplayForCurrentTaskList();
+            //   newUserInput.updateDisplayTaskList(0);
+         
+            });
     }
 }
