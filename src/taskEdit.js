@@ -55,5 +55,13 @@ export class taskEdit
         form.querySelector("input[name='dueDate']").value = taskDetailsToEdit.dueDate;
         form.querySelector("select[name='priority']").value = taskDetailsToEdit.priority;
 
+        // form.querySelector("p[name='UUID']").value="Hi Amal";
+        const UUID=document.querySelector('.UUID');
+        UUID.innerText=taskDetailsToEdit.UUID;
+
+        // document.querySelector("#newTaskForm").reset();
+
+        
+
     }
 }
