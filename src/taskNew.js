@@ -3,6 +3,8 @@
 import {localStorageAccess} from "./localStorageAccess.js";
 import {initializeLocalStorage} from "./index.js";
 import {newProjectAdd} from "./index.js"
+import { v4 as uuidv4 } from 'uuid';
+
 
 export class taskNew
 {
@@ -16,13 +18,20 @@ export class taskNew
     saveTask(newTaskObject)
     {
         let setProjectName=(newTaskObject["completeTaskList"][0]["projectName"]).toString();//This will get the project name from new task
-
+        let projectName=newTaskObject["completeTaskList"][0]["projectName"];
+        
+        let addNewTask=newTaskObject["completeTaskList"][0]["tasks"][0];//This will get the Tasks from new task
+        let newUUID=uuidv4(); // This will generate a random UUID 
+        console.log(uuidv4());
+        addNewTask.projectName=projectName;
+        addNewTask.UUID=newUUID;
+        console.log(addNewTask);
 
         if (initializeLocalStorage.localStorageStatus()==="Storage NOT Empty")
             {
                 let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-                // console.log(setProjectName);
-                let addNewTask=newTaskObject["completeTaskList"][0]["tasks"][0];//This will get the Tasks from new task
+
+
                 
                 for (let i=0; i<currentLocalStorage["completeTaskList"].length;i++ )
                     {
@@ -31,6 +40,8 @@ export class taskNew
                         if (currentLocalStorage["completeTaskList"][i]["projectName"]===setProjectName)//This code will add tasks to existing project lists
                             {
                                 console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
+                                // currentLocalStorage["completeTaskList"][i]["tasks"].push(uuidv4());
+
                                 currentLocalStorage["completeTaskList"][i]["tasks"].push(addNewTask);
                                 console.log(currentLocalStorage);
                              

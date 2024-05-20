@@ -43,9 +43,17 @@ export class taskEdit
         
         // const taskEditForm=document.createElement("form");
         console.log("Task Edit Form activated")
-        console.log(taskDetailsToEdit);
+        console.log(taskDetailsToEdit.projectName);
         const popover=document.querySelector(".newTaskDiv");
         const popupOpened = popover.togglePopover();
+
+
+        let form = document.querySelector("#newTaskForm");
+        form.querySelector("select[name='projectName']").value = "urgentAndImportant";
+        form.querySelector("input[name='taskTitle']").value = taskDetailsToEdit.taskTitle;
+        form.querySelector("input[name='taskDetails']").value = taskDetailsToEdit.taskDetails;
+        form.querySelector("input[name='dueDate']").value = taskDetailsToEdit.dueDate;
+        form.querySelector("select[name='priority']").value = taskDetailsToEdit.priority;
 
     }
 }
