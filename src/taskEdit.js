@@ -44,7 +44,7 @@ export class taskEdit
         // const taskEditForm=document.createElement("form");
         console.log("Task Edit Form activated")
         console.log(taskDetailsToEdit);
-        const popover=document.querySelector(".testPopover");
+        const popover=document.querySelector(".newTaskDiv");
         const popupOpened = popover.togglePopover();
 
     }
