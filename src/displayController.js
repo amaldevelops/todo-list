@@ -25,6 +25,11 @@ export class displayController
       {
         const popover=document.querySelector(".newTaskDiv");
         const popupOpened = popover.togglePopover();
+
+        document.querySelector("#newTaskForm").reset();
+        const UUID=document.querySelector('.UUID');
+        UUID.innerText="UUID";
+
       });
     }
 
@@ -32,6 +37,7 @@ export class displayController
     {
         document.querySelector(".addNewTask").addEventListener('click',()=>
         {
+                   
           let addNewTaskFormData = new FormData(document.querySelector("#newTaskForm"));
           let newTaskObject;
     
@@ -54,6 +60,7 @@ export class displayController
           // console.log(newTaskObject["tasks"]);
     
           taskNewSave.saveTask(newTaskObject);
+
           newUserInput.clearDisplayForCurrentTaskList();
           newUserInput.updateDisplayTaskList(0);
      

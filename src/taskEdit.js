@@ -39,9 +39,6 @@ export class taskEdit
 
     taskEditForm(taskDetailsToEdit)
     {
-        // const taskEditDiv=document.createElement("div");
-        
-        // const taskEditForm=document.createElement("form");
         console.log("Task Edit Form activated")
         console.log(taskDetailsToEdit.projectName);
         const popover=document.querySelector(".newTaskDiv");
@@ -55,13 +52,35 @@ export class taskEdit
         form.querySelector("input[name='dueDate']").value = taskDetailsToEdit.dueDate;
         form.querySelector("select[name='priority']").value = taskDetailsToEdit.priority;
 
-        // form.querySelector("p[name='UUID']").value="Hi Amal";
         const UUID=document.querySelector('.UUID');
         UUID.innerText=taskDetailsToEdit.UUID;
 
-        // document.querySelector("#newTaskForm").reset();
-
         
+        const taskIndex=this.findUUID(UUID.innerHTML);
+        console.log(taskIndex);
+        
+
+        // initializeLocalStorage.localStorageAccessWrite();
+    }
+
+    findUUID(searchUUID)
+    {
+        let currentStorage = initializeLocalStorage.localStorageAccessRead();
+
+        for (let i = 0; i < currentStorage['completeTaskList'].length; i++) {
+            let tasks = currentStorage['completeTaskList'][i]['tasks'];
+    
+            // Iterate over each task in the 'tasks' array
+            for (let j = 0; j < tasks.length; j++) {
+                if (tasks[j].UUID === searchUUID) {
+                    console.log(`Task found at index ${i} in 'completeTaskList', task index ${j} in 'tasks':`, tasks[j]);
+                    return currentStorage["completeTaskList"][i]["tasks"][j];
+                    // return (["completeTaskList"][i]["tasks"][j]); // Found the task, no need to continue searching
+                }
+            }
+        }
+    
+        console.log("No task found with the UUID:", searchUUID);
 
     }
 }

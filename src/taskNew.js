@@ -30,9 +30,7 @@ export class taskNew
         if (initializeLocalStorage.localStorageStatus()==="Storage NOT Empty")
             {
                 let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
-
-
-                
+      
                 for (let i=0; i<currentLocalStorage["completeTaskList"].length;i++ )
                     {
                         console.log(currentLocalStorage["completeTaskList"].length);
@@ -40,29 +38,13 @@ export class taskNew
                         if (currentLocalStorage["completeTaskList"][i]["projectName"]===setProjectName)//This code will add tasks to existing project lists
                             {
                                 console.log(currentLocalStorage["completeTaskList"][i]["projectName"]);
-                                // currentLocalStorage["completeTaskList"][i]["tasks"].push(uuidv4());
 
                                 currentLocalStorage["completeTaskList"][i]["tasks"].push(addNewTask);
                                 console.log(currentLocalStorage);
                              
                                 return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
 
-
                             }
-
-                        // else if (currentLocalStorage["completeTaskList"][i]["projectName"]!==setProjectName) //This code will add a new Project list if it does not exist
-                        // {
-                            // currentLocalStorage["completeTaskList"].push({projectName:setProjectName,tasks:[addNewTask]});
-                            // currentLocalStorage["completeTaskList"].push({projectName:setProjectName});
-                            // console.log(currentLocalStorage);
-
-                            // return initializeLocalStorage.localStorageAccessWrite(currentLocalStorage);
-
-                            // newProjectAdd.newProjectAdd(setProjectName);
-
-                        // };
-                        
-                        
 
                     }
                     console.log("Project Not found");
