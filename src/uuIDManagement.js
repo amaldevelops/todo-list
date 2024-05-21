@@ -1,12 +1,13 @@
 //This Module will create and check for UUID
 import { v4 as uuidv4 } from 'uuid';
+import {initializeLocalStorage} from "./index.js";
 
 
 export class uuIDManagement
 {
     constructor()
-    {
-
+    {   
+        this.currentStorage=initializeLocalStorage.localStorageAccessRead();
     }
 
     createNewUUID()

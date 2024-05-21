@@ -1,5 +1,6 @@
 // Only function of this module is to Edit any tasks as per user request and changes will be stored by calling the localStorageAccess module
 import {initializeLocalStorage} from "./index.js";
+import {uuidInstance} from "./index.js";
 
 export class taskEdit
 {
@@ -13,10 +14,6 @@ export class taskEdit
     edit(clickedEditButtonInstance)
     {
         
-        // console.log("Edit Button Clicked");
-        // console.log(clickedEditButtonInstance);
-        // console.log(typeof(clickedEditButtonInstance));
-
         // Get the inner HTML content of the element
         const innerHTML = clickedEditButtonInstance.innerHTML;
         // console.log("Inner HTML is : " + innerHTML);
@@ -57,7 +54,11 @@ export class taskEdit
         UUID.innerText=taskDetailsToEdit.UUID;
 
         
-        const taskIndex=this.findUUID(UUID.innerHTML);
+        // const taskIndex=this.findUUID(UUID.innerHTML);
+
+        const taskIndex=uuidInstance.findUUID(UUID.innerHTML);
+
+        
         
         
         this.saveAmendedTask(taskIndex);
@@ -65,25 +66,25 @@ export class taskEdit
 
     }
 
-    findUUID(searchUUID)
-    {
+    // findUUID(searchUUID)
+    // {
 
-        for (let i = 0; i < this.currentStorage['completeTaskList'].length; i++) {
-            let tasks = this.currentStorage['completeTaskList'][i]['tasks'];
+    //     for (let i = 0; i < this.currentStorage['completeTaskList'].length; i++) {
+    //         let tasks = this.currentStorage['completeTaskList'][i]['tasks'];
     
-            // Iterate over each task in the 'tasks' array
-            for (let j = 0; j < tasks.length; j++) {
-                if (tasks[j].UUID === searchUUID) {
-                    console.log(`Task found at index ${i} in 'completeTaskList', task index ${j} in 'tasks':`, tasks[j]);
-                    return [i,j];
-                    // return (["completeTaskList"][i]["tasks"][j]); // Found the task, no need to continue searching
-                }
-            }
-        }
+    //         // Iterate over each task in the 'tasks' array
+    //         for (let j = 0; j < tasks.length; j++) {
+    //             if (tasks[j].UUID === searchUUID) {
+    //                 console.log(`Task found at index ${i} in 'completeTaskList', task index ${j} in 'tasks':`, tasks[j]);
+    //                 return [i,j];
+    //                 // return (["completeTaskList"][i]["tasks"][j]); // Found the task, no need to continue searching
+    //             }
+    //         }
+    //     }
     
-        console.log("No task found with the UUID:", searchUUID);
+    //     console.log("No task found with the UUID:", searchUUID);
 
-    }
+    // }
 
     saveAmendedTask(taskIndex)
     {
