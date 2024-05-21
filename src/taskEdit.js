@@ -13,6 +13,10 @@ export class taskEdit
     edit(clickedEditButtonInstance)
     {
         
+        // console.log("Edit Button Clicked");
+        // console.log(clickedEditButtonInstance);
+        // console.log(typeof(clickedEditButtonInstance));
+
         // Get the inner HTML content of the element
         const innerHTML = clickedEditButtonInstance.innerHTML;
         // console.log("Inner HTML is : " + innerHTML);
@@ -25,6 +29,9 @@ export class taskEdit
 
         // Accessing the taskTitle property
         const taskTitle = jsonObject.taskTitle;
+
+        // Output the taskTitle
+        // console.log(taskTitle);
 
         // console.log(initializeLocalStorage.localStorageAccessRead());
         this.taskEditForm(jsonObject);
@@ -111,7 +118,18 @@ export class taskEdit
 
             initializeLocalStorage.localStorageAccessWrite(this.currentStorage);
 
-        
+
+
+            // console.log(this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]]);
+
+
+            
+            //   return (newTaskObject);
+
+    // 
+            //   newUserInput.clearDisplayForCurrentTaskList();
+            //   newUserInput.updateDisplayTaskList(0);
+         
             });
     }
 }
