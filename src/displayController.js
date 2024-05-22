@@ -8,6 +8,8 @@ import {taskDeleteNow} from "./index.js";
 import {newProjectAdd} from "./index.js";
 import {taskNewSave} from "./index.js";
 import {newUserInput} from "./index.js";
+import {taskStatusInstance} from "./index.js";
+
 
 
 export class displayController
@@ -166,20 +168,25 @@ export class displayController
               taskUUID.innerText="Task UUID: " + currentLocalStorage["completeTaskList"][this.selectedProject]["tasks"][i]["UUID"];
               taskDiv.append(taskUUID)
 
+
+              const buttonDiv=document.createElement("div");
+              buttonDiv.classList.add("buttonDiv");
+              taskListDiv.append(buttonDiv);
+
               this.editButton=document.createElement("button");
               this.editButton.classList.add("editButton");
               this.editButton.innerText="Edit Task";
-              taskDiv.append(this.editButton);
+              buttonDiv.append(this.editButton);
 
               this.completeButton=document.createElement("button");
               this.completeButton.classList.add("completeButton");
-              this.completeButton.innerText="Task Completed";
-              taskDiv.append(this.completeButton);
+              this.completeButton.innerText="Completed";
+              buttonDiv.append(this.completeButton);
         
-              const deleteButton=document.createElement("button");
-              deleteButton.classList.add("deleteButton");
-              deleteButton.innerText="Delete Task";
-              taskDiv.append(deleteButton);
+              this.deleteButton=document.createElement("button");
+              this.deleteButton.classList.add("deleteButton");
+              this.deleteButton.innerText="Delete Task";
+              buttonDiv.append(this.deleteButton);
 
               this.editButton.addEventListener('click',()=>
                 {
@@ -191,13 +198,21 @@ export class displayController
 
                 });
 
-              deleteButton.addEventListener('click',()=>
+              this.deleteButton.addEventListener('click',()=>
                 {
-                  const clickedEditButtonInstance=this.editButton;
+                  const clickedEditButtonInstance=this.deleteButton;
                   const taskFullDetailsInstance=taskFullDetails;
                   taskDeleteNow.buttonInstance(taskFullDetailsInstance);
                   
                 });
+
+                this.completeButton.addEventListener('click',()=>
+                  {
+                    const clickedCompleteButtonInstance=this.completeButton;
+                    const taskFullDetailsInstance=taskFullDetails;
+                    taskStatusInstance.toggleTaskStatus(taskFullDetailsInstance);
+                    
+                  });
         }
         }
       
