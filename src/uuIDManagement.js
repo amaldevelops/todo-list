@@ -7,7 +7,7 @@ export class uuIDManagement
 {
     constructor()
     {   
-        this.currentStorage=initializeLocalStorage.localStorageAccessRead();
+        
     }
 
     createNewUUID()
@@ -19,9 +19,9 @@ export class uuIDManagement
 
     findUUID(searchUUID)
     {
-
-        for (let i = 0; i < this.currentStorage['completeTaskList'].length; i++) {
-            let tasks = this.currentStorage['completeTaskList'][i]['tasks'];
+        let currentStorage=initializeLocalStorage.localStorageAccessRead();
+        for (let i = 0; i < currentStorage['completeTaskList'].length; i++) {
+            let tasks = currentStorage['completeTaskList'][i]['tasks'];
     
             // Iterate over each task in the 'tasks' array
             for (let j = 0; j < tasks.length; j++) {
