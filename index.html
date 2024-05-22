@@ -88,7 +88,11 @@
                 <form action="" method="get" id="selectProject">
 
                     <label for="selectRequiredProject">Display Project</label>
-                    <input type="text" name="selectRequiredProject" id="selectRequiredProject" required>
+                    <select name="selectRequiredProject" id="selectRequiredProject">
+                        <option value="urgentAndImportant">Urgent and Important</option>
+                        <option value="notUrgentButImportant">Not Urgent But Important</option>
+
+                        </select>
 
                     <button type="button" class="selectRequiredProjectButton">Display Project</button>
 
