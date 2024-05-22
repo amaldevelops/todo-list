@@ -3,8 +3,11 @@
 export class taskStatus
 {
 
-    toggleTaskStatus()
+    toggleTaskStatus(taskDetails)
     {
-        console.log("Task status toggled");
+
+        console.log(taskDetails);
+
+
     }
 }

@@ -208,9 +208,19 @@ export class displayController
 
                 this.completeButton.addEventListener('click',()=>
                   {
+
+
+                    this.currentTaskClass=document.querySelector(".individualTaskDetails");
+
+                    console.log(this.currentTaskClass);
                     const clickedCompleteButtonInstance=this.completeButton;
                     const taskFullDetailsInstance=taskFullDetails;
-                    taskStatusInstance.toggleTaskStatus(taskFullDetailsInstance);
+
+                    // taskStatusInstance.toggleTaskStatus(this.currentTaskClass);
+                    this.currentTaskClass.classList.add("taskCompleted");
+
+                    
+                    
                     
                   });
         }
