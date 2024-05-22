@@ -188,7 +188,9 @@ export class displayController
 
               deleteButton.addEventListener('click',()=>
                 {
-                  taskDeleteNow.delete();
+                  const clickedEditButtonInstance=this.editButton;
+                  const taskFullDetailsInstance=taskFullDetails;
+                  taskDeleteNow.buttonInstance(taskFullDetailsInstance);
                   
                 });
         }

@@ -28,9 +28,6 @@ export class taskEdit
         // Accessing the taskTitle property
         const taskTitle = jsonObject.taskTitle;
 
-        // Output the taskTitle
-        // console.log(taskTitle);
-
         // console.log(initializeLocalStorage.localStorageAccessRead());
         this.taskEditForm(jsonObject);
 
@@ -38,8 +35,7 @@ export class taskEdit
 
     taskEditForm(taskDetailsToEdit) //This will bring up the task input form with the existing task details
     {
-        // console.log("Task Edit Form activated")
-        // console.log(taskDetailsToEdit.projectName);
+
         const popover=document.querySelector(".newTaskDiv");
         const popupOpened = popover.togglePopover();
 
@@ -51,12 +47,6 @@ export class taskEdit
         form.querySelector("input[name='dueDate']").value = taskDetailsToEdit.dueDate;
         form.querySelector("select[name='priority']").value = taskDetailsToEdit.priority;
         form.querySelector("input[name='UUID']").value = taskDetailsToEdit["UUID"];
-
-        // const UUID=document.querySelector('.UUID');
-        // UUID.innerText=taskDetailsToEdit.UUID;
-
-        
-        // const taskIndex=this.findUUID(UUID.innerHTML);
 
         const taskIndex=uuidInstance.findUUID(taskDetailsToEdit["UUID"]);
               
@@ -103,7 +93,6 @@ export class taskEdit
 
             newUserInput.clearDisplayForCurrentTaskList();
             newUserInput.updateDisplayTaskList(0);
-
 
          
             });
