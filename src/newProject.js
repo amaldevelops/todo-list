@@ -55,8 +55,7 @@ export class newProject
         let currentLocalStorage=initializeLocalStorage.localStorageAccessRead();
         let newProjectName=newProjectAdd;
         let projectExists=false;
-        // initializeLocalStorage.localStorageStatus();
-        // initializeLocalStorage.localStorageAccessWrite(this.test);
+
         console.log("Below is the passed Project Name");
         console.log(newProjectAdd);
         for (let i=0;i<currentLocalStorage["completeTaskList"].length;i++)
