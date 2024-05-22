@@ -170,6 +170,11 @@ export class displayController
               this.editButton.classList.add("editButton");
               this.editButton.innerText="Edit Task";
               taskDiv.append(this.editButton);
+
+              this.completeButton=document.createElement("button");
+              this.completeButton.classList.add("completeButton");
+              this.completeButton.innerText="Task Completed";
+              taskDiv.append(this.completeButton);
         
               const deleteButton=document.createElement("button");
               deleteButton.classList.add("deleteButton");

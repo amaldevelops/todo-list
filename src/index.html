@@ -11,9 +11,9 @@
 
     <div class="appContainer">
 
-        <div class="testPopover" popover>
+        <!-- <div class="testPopover" popover>
             <h1>Pop Over works</h1>
-        </div>
+        </div> -->
 
         
         <div class="taskDisplay">
@@ -23,6 +23,7 @@
         </div>
         
         <div class="menuPane">
+            <h1>Navigation</h1>
             <div class="newTaskDiv" popover>
             <form action="" method="get" id="newTaskForm">
                 <label for="taskTitle">Task Title</label>
@@ -60,18 +61,51 @@
             </form>
 
         </div> 
+
+        <div>
         
             <button type="button" class="addNewTaskButton">Add New Task</button>
 
-            <h2>Current Project List</h2>
+            <div>
+            
+            <div>
+            <h2>Default Projects</h2>
             <button type="button" class="urgentImportantButton">Urgent & Important (Default)</button>
             <button type="button" class="notUrgentButImportantButton">Not Urgent but Important</button>
-            <button type="button" class="addNewProjectButton">Add New Project</button>
+            </div>
+
+            <div>
+                <h2>Additional Projects</h2>
+                <form action="" method="get" id="addNewProject">
+
+                    <label for="projectNameSet">Setup New Project</label>
+                    <input type="text" name="projectNameSet" id="projectNameSet" required>
+
+                    <button type="button" class="addNewProjectButton">Add New Project</button>
+
+                </form>
+
+                <form action="" method="get" id="selectProject">
+
+                    <label for="selectRequiredProject">Display Project</label>
+                    <input type="text" name="selectRequiredProject" id="selectRequiredProject" required>
+
+                    <button type="button" class="selectRequiredProjectButton">Display Project</button>
+
+                </form>
+
+
+
+            </div>
+            
 
             <!-- <form>
             <label for="jsonFile">Load Json File</label>
             <input type="file" id="jsonFile" name="jsonFile" accept=".json"/>
             </form> -->
+
+        </div>
+         </div>
         </div>
   
         <div class="softwareArchitecture">

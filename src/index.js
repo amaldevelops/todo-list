@@ -6,10 +6,12 @@ import{displayController} from "./displayController.js";
 import {taskNew} from "./taskNew.js";
 import {localStorageAccess} from "./localStorageAccess.js";
 import {taskEdit} from "./taskEdit.js";
+import {taskStatus} from "./taskStatus.js";
 import{taskDelete} from "./taskDelete.js";
 import {newProject} from "./newProject.js";
 import {uuIDManagement} from "./uuIDManagement.js";
 import {dateFunctions} from "./dates.js";
+
 
 
 //ES Module Exports
@@ -21,6 +23,7 @@ export const taskNewSave=new taskNew();
 export const taskDeleteNow=new taskDelete();
 export const uuidInstance=new uuIDManagement();
 export const datesInstance=new dateFunctions();
+export const taskStatusInstance=new taskStatus();
 
 
 // Program initialization code
@@ -38,6 +41,8 @@ const runProgram=function()
 
     newUserInput.clearDisplayForCurrentTaskList();
     newUserInput.updateDisplayTaskList(0);
+
+    taskStatusInstance.toggleTaskStatus();
 
 
 
