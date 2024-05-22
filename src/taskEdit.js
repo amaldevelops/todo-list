@@ -1,13 +1,14 @@
 // Only function of this module is to Edit any tasks as per user request and changes will be stored by calling the localStorageAccess module
 import {initializeLocalStorage} from "./index.js";
 import {uuidInstance} from "./index.js";
+import {newUserInput} from "./index.js";
 
 export class taskEdit
 {
 
     constructor()
     {
-        this.currentStorage = initializeLocalStorage.localStorageAccessRead();
+        
 
     }
 
@@ -35,7 +36,7 @@ export class taskEdit
 
     }
 
-    taskEditForm(taskDetailsToEdit)
+    taskEditForm(taskDetailsToEdit) //This will bring up the task input form with the existing task details
     {
         // console.log("Task Edit Form activated")
         // console.log(taskDetailsToEdit.projectName);
@@ -44,50 +45,29 @@ export class taskEdit
 
 
         let form = document.querySelector("#newTaskForm");
-        form.querySelector("select[name='projectName']").value = "urgentAndImportant";
+        form.querySelector("select[name='projectName']").value = taskDetailsToEdit["projectName"];
         form.querySelector("input[name='taskTitle']").value = taskDetailsToEdit.taskTitle;
         form.querySelector("input[name='taskDetails']").value = taskDetailsToEdit.taskDetails;
         form.querySelector("input[name='dueDate']").value = taskDetailsToEdit.dueDate;
         form.querySelector("select[name='priority']").value = taskDetailsToEdit.priority;
+        form.querySelector("input[name='UUID']").value = taskDetailsToEdit["UUID"];
 
-        const UUID=document.querySelector('.UUID');
-        UUID.innerText=taskDetailsToEdit.UUID;
+        // const UUID=document.querySelector('.UUID');
+        // UUID.innerText=taskDetailsToEdit.UUID;
 
         
         // const taskIndex=this.findUUID(UUID.innerHTML);
 
-        const taskIndex=uuidInstance.findUUID(UUID.innerHTML);
-
-        
-        
-        
+        const taskIndex=uuidInstance.findUUID(taskDetailsToEdit["UUID"]);
+              
         this.saveAmendedTask(taskIndex);
   
 
     }
 
-    // findUUID(searchUUID)
-    // {
-
-    //     for (let i = 0; i < this.currentStorage['completeTaskList'].length; i++) {
-    //         let tasks = this.currentStorage['completeTaskList'][i]['tasks'];
-    
-    //         // Iterate over each task in the 'tasks' array
-    //         for (let j = 0; j < tasks.length; j++) {
-    //             if (tasks[j].UUID === searchUUID) {
-    //                 console.log(`Task found at index ${i} in 'completeTaskList', task index ${j} in 'tasks':`, tasks[j]);
-    //                 return [i,j];
-    //                 // return (["completeTaskList"][i]["tasks"][j]); // Found the task, no need to continue searching
-    //             }
-    //         }
-    //     }
-    
-    //     console.log("No task found with the UUID:", searchUUID);
-
-    // }
-
     saveAmendedTask(taskIndex)
     {
+        let currentStorage = initializeLocalStorage.localStorageAccessRead();
         document.querySelector(".editTask").addEventListener('click',()=>
             {
                        
@@ -99,7 +79,9 @@ export class taskEdit
                                     tasks:[{taskTitle:addNewTaskFormData.getAll("taskTitle").toString(),
                                     taskDetails:addNewTaskFormData.getAll("taskDetails").toString(),
                                     dueDate:addNewTaskFormData.getAll("dueDate").toString(),
-                                    priority:addNewTaskFormData.getAll("priority").toString()
+                                    priority:addNewTaskFormData.getAll("priority").toString(),
+                                    UUID:addNewTaskFormData.getAll("UUID").toString(),
+                                    projectName:addNewTaskFormData.getAll("projectName").toString()
                                     }]
                                     }]
                                     
@@ -113,23 +95,16 @@ export class taskEdit
 
               
 
-            (this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]])=newTaskObject["completeTaskList"][0]["tasks"][0];
+            (currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]])=newTaskObject["completeTaskList"][0]["tasks"][0];
 
-            console.log(this.currentStorage);
+            console.log(currentStorage);
 
-            initializeLocalStorage.localStorageAccessWrite(this.currentStorage);
+            initializeLocalStorage.localStorageAccessWrite(currentStorage);
+
+            newUserInput.clearDisplayForCurrentTaskList();
+            newUserInput.updateDisplayTaskList(0);
 
 
-
-            // console.log(this.currentStorage["completeTaskList"][taskIndex[0]]["tasks"][taskIndex[1]]);
-
-
-            
-            //   return (newTaskObject);
-
-    // 
-            //   newUserInput.clearDisplayForCurrentTaskList();
-            //   newUserInput.updateDisplayTaskList(0);
          
             });
     }
