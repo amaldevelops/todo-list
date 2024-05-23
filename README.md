@@ -1,6 +1,8 @@
 # JavaScript-Todo-List
 JavaScript, HTML, CSS based To Do list App
-
+## Live Version hosted on GitHub Pages
+https://1amal.github.io/JavaScript-Todo-List/
+git s
 ## To Do List App with OOP and Webpack
 
 This is a JavaScript To Do List application built with:
@@ -68,9 +70,9 @@ The code is organized into several folders:
     * **utils:** Contains utility functions (e.g., localStorage access).
     * **components:** Contains UI components for rendering todos and projects.
     * `index.js`: Main application entry point.
-* **public:** Contains static assets like HTML and CSS.
+* **dist:** Contains static assets like HTML and CSS.
     * `index.html`
-    * `styles.css`
+    * `index.css`
 * **package.json:** Manages project dependencies.
 
 ### Data Persistence
