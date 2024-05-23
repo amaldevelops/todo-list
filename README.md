@@ -2,7 +2,7 @@
 JavaScript, HTML, CSS based To Do list App
 ## Live Version hosted on GitHub Pages
 https://1amal.github.io/JavaScript-Todo-List/
-git s
+
 ## To Do List App with OOP and Webpack
 
 This is a JavaScript To Do List application built with:
