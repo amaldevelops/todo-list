@@ -1,153 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do WebApp</title>
-</head>
-<body>
-
-   
-
+  </head>
+  <body>
     <div class="appContainer">
+      <div class="taskDisplay">
+        <h1>Current Task List</h1>
+      </div>
 
-       
-        <div class="taskDisplay">
-            <h1>Current Task List</h1>
-            
+      <div class="menuPane">
+        <h1>Navigation</h1>
+        <div class="newTaskDiv" popover>
+          <form action="" method="get" id="newTaskForm">
+            <label for="taskTitle">Task Title</label>
+            <input type="text" name="taskTitle" required id="taskTitle" />
 
+            <label for="taskDetails">Task Details</label>
+            <input type="text" name="taskDetails" id="taskDetails" required />
+
+            <label for="dueDate">Due Date</label>
+            <input type="date" name="dueDate" id="dueDate" />
+
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+
+            <label for="projectName">Project Name</label>
+            <select name="projectName" id="projectName">
+              <option value="urgentAndImportant">Urgent and Important</option>
+              <option value="notUrgentButImportant">
+                Not Urgent But Important
+              </option>
+            </select>
+
+            <label for="UUID">UUID</label>
+            <input type="text" name="UUID" id="UUID" readonly />
+
+            <button class="addNewTask" type="button">Add New Task</button>
+            <button class="editTask" type="button">Amend Existing Task</button>
+          </form>
         </div>
-        
-        <div class="menuPane">
-            <h1>Navigation</h1>
-            <div class="newTaskDiv" popover>
-            <form action="" method="get" id="newTaskForm">
-                <label for="taskTitle">Task Title</label>
-                <input type="text" name="taskTitle"  required id="taskTitle">
-
-                <label for="taskDetails">Task Details</label>
-                <input type="text" name="taskDetails" id="taskDetails" required>
-
-                <label for="dueDate">Due Date</label>
-                <input type="date" name="dueDate" id="dueDate">
-
-                <label for="priority">Priority</label>
-                <select name="priority" id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                    </select>
-
-                <label for="projectName">Project Name</label>
-                <select name="projectName" id="projectName">
-                    <option value="urgentAndImportant">Urgent and Important</option>
-                    <option value="notUrgentButImportant">Not Urgent But Important</option>
-
-                </select>
-
-                <label for="UUID">UUID</label>
-                <input type="text" name="UUID" id="UUID" readonly>
-
-
-                <p class="UUID">UUID</p>
-
-                <button class="addNewTask" type="button">Add New Task</button>
-                <button class="editTask" type="button">Amend Existing Task</button>
-                
-            </form>
-
-        </div> 
 
         <div>
-        
-            <button type="button" class="addNewTaskButton">Add New Task</button>
+          <button type="button" class="addNewTaskButton">Add New Task</button>
 
+          <div>
             <div>
-            
-            <div>
-            <h2>Default Projects</h2>
-            <button type="button" class="urgentImportantButton">Urgent & Important (Default)</button>
-            <button type="button" class="notUrgentButImportantButton">Not Urgent but Important</button>
+              <h2>Default Projects</h2>
+              <button type="button" class="urgentImportantButton">
+                Urgent & Important (Default)
+              </button>
+              <button type="button" class="notUrgentButImportantButton">
+                Not Urgent but Important
+              </button>
             </div>
 
             <div>
-                <h2>Additional Projects</h2>
-                <form action="" method="get" id="addNewProject">
+              <h2>Additional Projects</h2>
+              <form action="" method="get" id="addNewProject">
+                <label for="projectNameSet">Setup New Project</label>
+                <input
+                  type="text"
+                  name="projectNameSet"
+                  id="projectNameSet"
+                  required
+                />
 
-                    <label for="projectNameSet">Setup New Project</label>
-                    <input type="text" name="projectNameSet" id="projectNameSet" required>
+                <button type="button" class="addNewProjectButton">
+                  Add New Project
+                </button>
+              </form>
 
-                    <button type="button" class="addNewProjectButton">Add New Project</button>
+              <form action="" method="get" id="selectProject">
+                <label for="selectRequiredProject">Display Project</label>
+                <select name="selectRequiredProject" id="selectRequiredProject">
+                  <option value="urgentAndImportant">
+                    Urgent and Important
+                  </option>
+                  <option value="notUrgentButImportant">
+                    Not Urgent But Important
+                  </option>
+                </select>
 
-                </form>
+                <button type="button" class="selectRequiredProjectButton">
+                  Display Project
+                </button>
+              </form>
 
-                <form action="" method="get" id="selectProject">
-
-                    <label for="selectRequiredProject">Display Project</label>
-                    <select name="selectRequiredProject" id="selectRequiredProject">
-                        <option value="urgentAndImportant">Urgent and Important</option>
-                        <option value="notUrgentButImportant">Not Urgent But Important</option>
-
-                        </select>
-
-                    <button type="button" class="selectRequiredProjectButton">Display Project</button>
-
-                </form>
-
-
-
+              <div>
+                <h2>Project Technical Information</h2>
+                <a href="https://github.com/1Amal/JavaScript-Todo-List"
+                  >Click here for Source Code and Technical info available on
+                  GitHub</a
+                >
+              </div>
             </div>
-            
 
             <!-- <form>
             <label for="jsonFile">Load Json File</label>
             <input type="file" id="jsonFile" name="jsonFile" accept=".json"/>
             </form> -->
-
+          </div>
         </div>
-         </div>
-        </div>
-  
-        <div class="softwareArchitecture">
-            <h1>Software Architecture</h1>
-            <ul>
-                <li>Use ES6 Modules and Webpack to create a OOP based todo App</li>
-                <li>‘Todos’ are going to be objects that will be dynamically created, which means either using factories or constructors/classes to generate them.</li>
-                
-                <li>Title, description, dueDate and priority. Also to include notes or even a checklist.</li>
-                
-                <li>Todo list should have projects or separate lists of todos. When a user first opens the app, there should be some sort of ‘default’ project to which all of their todos are put. Users should be able to create new projects and choose which project their todos go into.</li>
-                
-                <li>Separate application logic (i.e. creating new todos, setting todos as complete, changing todo priority etc.) from the DOM-related stuff, so keep all of those things in separate modules.</li>
-                
-                <li>View all todos in each project (probably just the title and duedate… perhaps changing color for different priorities). Expand a single todo to see/edit its details.</li>
-                
-                <li>Functionality to Delete a todo.</li>
-                
-                <li>Use date-fns which gives a bunch of handy functions for formatting and manipulating dates and times.</li>
-                
-                <li>Using Web Storage API localStorageStorage persistence to save/retrieve data from a JSON file</li>
-                
-                <li>Set up a function that saves the projects (and todos) to localStorage every time a new project (or todo) is created, and another function that looks for that data in localStorage when your app is first loaded.</li>
-    
-                <li>Initially inspect data saved in localStorage using DevTools! i.e. open the Application tab in DevTools and click on the Local Storage tab under Storage. Every time you add, update and delete data from localStorage in your app, those changes will be reflected in DevTools.</li>
-    
-                <li>Since localStorage uses JSON to send and store data, and when you retrieve the data, it will also be in JSON format. Keeping in mind that you cannot store functions in JSON, so find a way to add methods back to your object properties once you fetch them.</li>
-            </ul>
-
-            <h1>Future Development</h1>
-            <ul>
-                <li>Enable functionality to Add new projects</li>
-                <li>Enable Functionality to Complete tasks</li>
-            </ul>
-    
-        </div>
-        
-
-
+      </div>
     </div>
-
-   
-    
-</body>
+  </body>
 </html>
